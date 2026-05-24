@@ -3,7 +3,7 @@
     "firstName": "Grigoris",
     "lastName": "Kazakou",
     "title": "Product - Project Manager & ΙΤ Business Analyst",
-    "photo": "GregKazakou/CV/img/Photo_Profile1.png",
+    "photo": "GregKazakou/CV/img/Photo_Profile.jpg",
     "abstract": "Enthusiastic and results-driven IT Product & Project Manager, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end—from product vision to delivery—aligning strategy, governance, and stakeholder needs with Agile, Hybrid, and Waterfall methodologies. Experienced in driving digital transformation across SaaS products in highly regulated environments, turning technical challenges into actionable business solutions while optimizing processes, mitigating risks, and fostering innovation across SMEs and enterprise organizations."
   },
   "contact": {
@@ -11,7 +11,7 @@
     "phone": "+30 6946692139",
     "location": "Athens, Greece",
     "github": "github.com/GregKazakou",
-    "linkedin": "https://www.linkedin.com/in/grigoris-\nkazakou-870330134"
+    "linkedin": "https://www.linkedin.com\n/in/grigoris-kazakou-\n870330134"
   },
   "experience": [
     {
@@ -120,7 +120,7 @@
       "description": "Managed concurrent enterprise projects using Waterfall, Hybrid, and Agile methodologies in complex, regulated environments."
     },
     {
-      "name": "MyData & E-Invoicing Integration",
+      "name": "Digital E-Invoicing Integration",
       "company": "Epsilon Net",
       "description": "Coordinated electronic invoicing compliance rollout implementing PEPPOL and MyData standards for enterprise clients."
     }
@@ -128,19 +128,20 @@
   "skills": [
     "Product Management",
     "Project Management",
-    "Agile & Scrum",
-    "Azure DevOps & Wrike",
+    "Agile methodologies",
+    "Azure DevOps & GitHub",
+    "Wrike Project Management",
     "SaaS Platforms",
     "API Development & Testing",
     "Robot Framework & Postman",
     "SQL & Databases",
-    "GitHub & Version Control",
     "ERP/CRM Systems",
     "Quality Assurance",
     "Stakeholder Management"
   ],
   "certifications": [
-    "PMP - Project Management Professional (In Progress)",
+    "PMP - Project Management Institute (In Progress)",
+    "ICH GOOD CLINICAL PRACTICE E6(R3) (tghn)",
     "EF SET English Certificate (C2 Proficient)",
     "Web & Mobile Apps Specialist (AUEB)",
     "Cyber Security & Social Networks"
