@@ -486,6 +486,12 @@
                 data.experience.forEach(exp => {
                     const expBlock = document.createElement('section');
                     expBlock.className = 'blocks';
+                    
+                    // Add page break if specified
+                    if (exp.pageBreakBefore) {
+                        expBlock.style.pageBreakBefore = 'always';
+                    }
+                    
                     expBlock.innerHTML = `
                         <div class="date">
                             <span>${exp.startDate}</span><span>${exp.endDate}</span>
@@ -512,6 +518,12 @@
                 data.education.forEach(edu => {
                     const eduBlock = document.createElement('section');
                     eduBlock.className = 'blocks';
+                    
+                    // Add page break if specified
+                    if (edu.pageBreakBefore) {
+                        eduBlock.style.pageBreakBefore = 'always';
+                    }
+                    
                     const dateHTML = edu.year 
                         ? `<span>${edu.year}</span>` 
                         : `<span>${edu.startYear}</span><span>${edu.endYear}</span>`;
@@ -537,6 +549,12 @@
                 data.projects.forEach(proj => {
                     const projBlock = document.createElement('section');
                     projBlock.className = 'blocks';
+                    
+                    // Add page break class if specified in JSON
+                    if (proj.pageBreakBefore) {
+                        projBlock.style.pageBreakBefore = 'always';
+                    }
+                    
                     projBlock.innerHTML = `
                         <div class="date"></div>
                         <div class="decorator"></div>
