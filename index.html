@@ -55,15 +55,13 @@
             list-style-type: none;
         }
 
-        /* Main content area */
         #main {
             float: left;
             width: var(--main-width);
             padding: 6.5mm 6.5mm 0 6.5mm;
-            font-size: 10pt;
+            font-size: 10.5pt;
         }
 
-        /* Sidebar */
         #sidebar {
             float: right;
             position: relative;
@@ -74,7 +72,6 @@
             font-size: 10pt;
         }
 
-        /* Title section */
         #title {
             position: relative;
             left: 14mm;
@@ -99,7 +96,6 @@
             text-transform: uppercase;
         }
 
-        /* Main blocks */
         .main-block {
             margin-top: 2.5mm;
         }
@@ -134,7 +130,6 @@
             content: ' ';
         }
 
-        /* Icon adjustments */
         #main h2 > .fa-graduation-cap {
             left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
             top: 2pt;
@@ -148,11 +143,6 @@
             top: 1.5pt;
         }
 
-        #main h2 > .fa-certificate {
-            top: 1pt;
-        }
-
-        /* Row blocks */
         .blocks {
             display: flex;
             flex-flow: row nowrap;
@@ -166,7 +156,7 @@
             flex: 0 0 var(--date-block-width);
             padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
             padding-right: var(--decorator-horizontal-margin);
-            font-size: 8.5pt;
+            font-size: 10.5pt;
             text-align: right;
             line-height: 1;
         }
@@ -184,7 +174,6 @@
             content: '|';
         }
 
-        /* Decorator (timeline) */
         .decorator {
             flex: 0 0 0;
             position: relative;
@@ -221,7 +210,6 @@
             margin-bottom: 6.5mm;
         }
 
-        /* Details section */
         .details {
             flex: 1 0 0;
             padding-left: var(--decorator-horizontal-margin);
@@ -247,12 +235,12 @@
 
         .details .place {
             float: left;
-            font-size: 9pt;
+            font-size: 10pt;
         }
 
         .details .location {
             float: right;
-            font-size: 9pt;
+            font-size: 10pt;
         }
 
         .details div {
@@ -271,7 +259,6 @@
             content: "\f041";
         }
 
-        /* Lists */
         #main ul {
             padding-left: 1.8mm;
             margin: 2mm 0;
@@ -289,19 +276,15 @@
 
         .details .concise ul {
             margin: 0 !important;
-            -webkit-columns: 2;
-            -moz-columns: 2;
-            columns: 2;
         }
 
         .details .concise li {
             margin: 0 !important;
         }
 
-        /* Sidebar sections */
         #sidebar h1 {
             font-weight: 400;
-            font-size: 12pt;
+            font-size: 13pt;
             text-transform: uppercase;
         }
 
@@ -339,12 +322,11 @@
             margin-bottom: 0.8mm;
         }
 
-        /* Disclaimer */
         #disclaimer {
             position: absolute;
             bottom: var(--sidebar-horizontal-padding);
             right: var(--sidebar-horizontal-padding);
-            font-size: 7.5pt;
+            font-size: 10pt;
             font-style: italic;
             line-height: 1.1;
             text-align: right;
@@ -358,23 +340,20 @@
             font-style: normal;
         }
 
-        /* Print adjustments */
         @media print {
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
 
-            /* Removed: Force Key Projects to start on page 2 */
+            /* Removed: .main-block.concise { page-break-before: always; } */
             /* Projects will now flow naturally after Education */
 
-            /* Prevent sections from breaking across pages */
             .blocks {
                 page-break-inside: avoid;
             }
         }
 
-        /* Web view enhancements */
         @media screen {
             body {
                 margin: 20px auto;
@@ -421,13 +400,13 @@
 
     <section id="main">
         <header id="title">
-            <h1>Grigoris <strong>Kazakou</strong></h1>
-            <span class="subtitle">Product Manager &amp; IT Project Manager</span>
+            <h1><span id="firstName">Loading</span> <strong id="lastName">...</strong></h1>
+            <span class="subtitle" id="jobTitle">Loading...</span>
         </header>
 
         <section class="main-block" style="margin-bottom: 8mm;">
-            <p style="font-size: 8pt; line-height: 1.5; text-align: justify; color: #444;">
-                Enthusiastic and results-driven IT Product & Project Manager, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end—from product vision to delivery—aligning strategy, governance, and stakeholder needs with Agile, Hybrid, and Waterfall methodologies. Experienced in driving digital transformation across SaaS products in highly regulated environments, turning technical challenges into actionable business solutions while optimizing processes, mitigating risks, and fostering innovation across SMEs and enterprise organizations.
+            <p id="abstract" style="font-size: 10pt; line-height: 1.5; text-align: justify; color: #444;">
+                Loading...
             </p>
         </section>
 
@@ -435,261 +414,176 @@
             <h2>
                 <i class="fa fa-suitcase"></i> Experience
             </h2>
-            <section class="blocks">
-                <div class="date">
-                    <span>present</span><span>2026</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Product Manager <span style="font-size: 8pt; color: #888; font-weight: 300;">(Hybrid)</span></h3>
-                        <span class="place">Entersoftone / Impact</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Lead end-to-end product management for 3 SaaS products in highly regulated environments, driving feature development and roadmap prioritization</li>
-                            <li>Coordinate agile workflows using Azure DevOps and Wrike, managing sprint planning and release cycles across multiple development teams</li>
-                            <li>Establish comprehensive QA processes with automated testing frameworks (Robot Framework) and API validation (Postman Flows)</li>
-                            <li>Collaborate with engineering to define technical requirements and validate API specifications using Swagger and Apidog</li>
-                            <li>Manage version control and developer collaboration through GitHub with strict documentation and compliance protocols</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2025</span><span>2023</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Project Manager <span style="font-size: 8pt; color: #888; font-weight: 300;">(Hybrid)</span></h3>
-                        <span class="place">Entersoftone / Impact</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Managed portfolio of 18–22 concurrent projects, leading end-to-end delivery with large enterprise clients</li>
-                            <li>Operated in complex, regulated environments ensuring alignment across business, compliance, and technical requirements</li>
-                            <li>Applied Waterfall, Hybrid, and Agile methodologies for effective project delivery and change management</li>
-                            <li>Identified business needs, analyzed stakeholder expectations, and monitored regulatory updates to inform project objectives</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2023</span><span>2022</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Project Consultant <span style="font-size: 8pt; color: #888; font-weight: 300;">(On-site)</span></h3>
-                        <span class="place">Epsilon Net</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Led initiatives to modernize client business processes through digital invoicing, ERP, EDI, WMS, CRM, and eCommerce solutions</li>
-                            <li>Analyzed business requirements and designed solutions aligned with customer workflows, implementing PEPPOL and MyData standards</li>
-                            <li>Collaborated with development teams to translate business needs into technical tasks and ensure seamless API integration</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2022</span><span>2021</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Greek Military Service <span style="font-size: 8pt; color: #888; font-weight: 300;">(On-site)</span></h3>
-                        <span class="place">401 General Military Hospital</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Provided technical support, troubleshooting hardware and network issues</li>
-                            <li>Assisted in administration of resources and managed communication systems</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2021</span><span>2017</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>IT & Digital Transformation Coordinator <span style="font-size: 8pt; color: #888; font-weight: 300;">(On-site)</span></h3>
-                        <span class="place">Sposa Ltd</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        <ul>
-                            <li>Drove digital transformation by identifying technical challenges and implementing solutions to enhance business performance</li>
-                            <li>Collaborated with stakeholders to implement ERP, CRM, and eCommerce platforms, optimizing system performance</li>
-                            <li>Managed IT infrastructure including hardware, software, networks, servers, and operating systems</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <div id="experienceContainer"></div>
         </section>
 
         <section class="main-block">
             <h2>
                 <i class="fa fa-graduation-cap"></i> Education
             </h2>
-            <section class="blocks">
-                <div class="date">
-                    <span>2024</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Diploma - Computer Applications Technician</h3>
-                        <span class="place">National Organization for Certification of Qualifications (EOPPEP)</span>
-                        <span class="location">Greece</span>
-                    </header>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2018</span><span>2015</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Computer Applications Technician</h3>
-                        <span class="place">Sivitanidios Technical Institute</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        Focus on multimedia, web development, and business software applications. Experience in C#, C++, HTML, CSS, Java, SQL, and cloud technologies.
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date">
-                    <span>2014</span><span>2012</span>
-                </div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Computer and Network Technology</h3>
-                        <span class="place">Sivitanidios Technical High School</span>
-                        <span class="location">Athens, GR</span>
-                    </header>
-                    <div>
-                        Specialization in computer hardware, network technician, network installation, maintenance, and systems troubleshooting.
-                    </div>
-                </div>
-            </section>
+            <div id="educationContainer"></div>
         </section>
 
         <section class="main-block concise">
             <h2>
                 <i class="fa fa-folder-open"></i> Key Projects
             </h2>
-            <section class="blocks">
-                <div class="date"></div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>SaaS Product Suite Management</h3>
-                        <span class="place">Entersoftone</span>
-                    </header>
-                    <div>
-                        Led end-to-end product management for 3 regulated SaaS products, implementing automated QA frameworks and API validation workflows.
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date"></div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>Enterprise Project Portfolio (18-22 Projects)</h3>
-                        <span class="place">Entersoftone</span>
-                    </header>
-                    <div>
-                        Managed concurrent enterprise projects using Waterfall, Hybrid, and Agile methodologies in complex, regulated environments.
-                    </div>
-                </div>
-            </section>
-            <section class="blocks">
-                <div class="date"></div>
-                <div class="decorator"></div>
-                <div class="details">
-                    <header>
-                        <h3>MyData & E-Invoicing Integration</h3>
-                        <span class="place">Epsilon Net</span>
-                    </header>
-                    <div>
-                        Coordinated electronic invoicing compliance rollout implementing PEPPOL and MyData standards for enterprise clients.
-                    </div>
-                </div>
-            </section>
+            <div id="projectsContainer"></div>
         </section>
     </section>
 
     <aside id="sidebar">
         <div class="side-block" id="contact">
             <h1>Contact</h1>
-            <ul>
-                <li><i class="fa fa-envelope"></i> gregkazakou@gmail.com</li>
-                <li><i class="fa fa-phone"></i> +30 694 669 2139</li>
-                <li><i class="fa fa-map-marker"></i> Athens, Greece</li>
-                <li><i class="fab fa-github"></i> github.com/SirAlcan</li>
-                <li><i class="fab fa-linkedin"></i> linkedin.com/in/grigoris-kazakou</li>
-            </ul>
+            <ul id="contactList"></ul>
         </div>
 
         <div class="side-block" id="skills">
             <h1>Skills</h1>
-            <ul>
-                <li>Product Management</li>
-                <li>Project Management</li>
-                <li>Agile & Scrum</li>
-                <li>Azure DevOps & Wrike</li>
-                <li>SaaS Platforms</li>
-                <li>API Development & Testing</li>
-                <li>Robot Framework & Postman</li>
-                <li>SQL & Databases</li>
-                <li>GitHub & Version Control</li>
-                <li>ERP/CRM Systems</li>
-                <li>Quality Assurance</li>
-                <li>Stakeholder Management</li>
-            </ul>
+            <ul id="skillsList"></ul>
         </div>
 
-        <div class="side-block" id="skills">
+        <div class="side-block" id="certifications">
             <h1>Certifications</h1>
-            <ul>
-                <li>PMP - Project Management Professional (In Progress)</li>
-                <li>EF SET English Certificate (C2 Proficient)</li>
-                <li>Web & Mobile Apps Specialist (AUEB)</li>
-                <li>Cyber Security & Social Networks</li>
-            </ul>
+            <ul id="certificationsList"></ul>
         </div>
 
-        <div class="side-block" id="skills">
+        <div class="side-block" id="languages">
             <h1>Languages</h1>
-            <ul>
-                <li>Greek (Native)</li>
-                <li>English (C2 Proficient)</li>
-                <li>Russian (Intermediate)</li>
-                <li>Romanian (Intermediate)</li>
-            </ul>
+            <ul id="languagesList"></ul>
         </div>
 
-        <!-- <div id="disclaimer">
+        <!--<div id="disclaimer">
             This résumé was wholly typeset with HTML/CSS —<br>
             see <code>github.com/SirAlcan/CV</code>
         </div> -->
     </aside>
+
+    <script>
+        // Load CV data from JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Personal Info
+                document.getElementById('firstName').textContent = data.personal.firstName;
+                document.getElementById('lastName').textContent = data.personal.lastName;
+                document.getElementById('jobTitle').textContent = data.personal.title;
+                document.getElementById('abstract').textContent = data.personal.abstract;
+
+                // Contact
+                const contactList = document.getElementById('contactList');
+                contactList.innerHTML = `
+                    <li><i class="fa fa-envelope"></i> ${data.contact.email}</li>
+                    <li><i class="fa fa-phone"></i> ${data.contact.phone}</li>
+                    <li><i class="fa fa-map-marker"></i> ${data.contact.location}</li>
+                    <li><i class="fab fa-github"></i> ${data.contact.github}</li>
+                    <li><i class="fab fa-linkedin"></i> ${data.contact.linkedin}</li>
+                `;
+
+                // Experience
+                const experienceContainer = document.getElementById('experienceContainer');
+                data.experience.forEach(exp => {
+                    const expBlock = document.createElement('section');
+                    expBlock.className = 'blocks';
+                    
+                    // Add page break if specified
+                    if (exp.pageBreakBefore) {
+                        expBlock.style.pageBreakBefore = 'always';
+                    }
+                    
+                    expBlock.innerHTML = `
+                        <div class="date">
+                            <span>${exp.startDate}</span><span>${exp.endDate}</span>
+                        </div>
+                        <div class="decorator"></div>
+                        <div class="details">
+                            <header>
+                                <h3>${exp.title} ${exp.workType ? `<span style="font-size: 8pt; color: #888; font-weight: 300;">(${exp.workType})</span>` : ''}</h3>
+                                <span class="place">${exp.company}</span>
+                                <span class="location">${exp.location}</span>
+                            </header>
+                            <div>
+                                <ul>
+                                    ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    experienceContainer.appendChild(expBlock);
+                });
+
+                // Education
+                const educationContainer = document.getElementById('educationContainer');
+                data.education.forEach(edu => {
+                    const eduBlock = document.createElement('section');
+                    eduBlock.className = 'blocks';
+                    
+                    // Add page break if specified
+                    if (edu.pageBreakBefore) {
+                        eduBlock.style.pageBreakBefore = 'always';
+                    }
+                    
+                    const dateHTML = edu.year 
+                        ? `<span>${edu.year}</span>` 
+                        : `<span>${edu.startYear}</span><span>${edu.endYear}</span>`;
+                    eduBlock.innerHTML = `
+                        <div class="date">
+                            ${dateHTML}
+                        </div>
+                        <div class="decorator"></div>
+                        <div class="details">
+                            <header>
+                                <h3>${edu.degree}</h3>
+                                <span class="place">${edu.institution}</span>
+                                <span class="location">${edu.location}</span>
+                            </header>
+                            ${edu.description ? `<div>${edu.description}</div>` : ''}
+                        </div>
+                    `;
+                    educationContainer.appendChild(eduBlock);
+                });
+
+                // Projects
+                const projectsContainer = document.getElementById('projectsContainer');
+                data.projects.forEach(proj => {
+                    const projBlock = document.createElement('section');
+                    projBlock.className = 'blocks';
+                    
+                    // Add page break class if specified in JSON
+                    if (proj.pageBreakBefore) {
+                        projBlock.style.pageBreakBefore = 'always';
+                    }
+                    
+                    projBlock.innerHTML = `
+                        <div class="date"></div>
+                        <div class="decorator"></div>
+                        <div class="details">
+                            <header>
+                                <h3>${proj.name}</h3>
+                                <span class="place">${proj.company}</span>
+                            </header>
+                            <div>${proj.description}</div>
+                        </div>
+                    `;
+                    projectsContainer.appendChild(projBlock);
+                });
+
+                // Skills
+                const skillsList = document.getElementById('skillsList');
+                skillsList.innerHTML = data.skills.map(skill => `<li>${skill}</li>`).join('');
+
+                // Certifications
+                const certificationsList = document.getElementById('certificationsList');
+                certificationsList.innerHTML = data.certifications.map(cert => `<li>${cert}</li>`).join('');
+
+                // Languages
+                const languagesList = document.getElementById('languagesList');
+                languagesList.innerHTML = data.languages.map(lang => `<li>${lang.language} (${lang.level})</li>`).join('');
+            })
+            .catch(error => {
+                console.error('Error loading CV data:', error);
+                document.getElementById('abstract').textContent = 'Error loading CV data. Please check console.';
+            });
+    </script>
 </body>
 </html>
