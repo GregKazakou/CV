@@ -2,7 +2,7 @@
   "personal": {
     "firstName": "Grigoris",
     "lastName": "Kazakou",
-    "title": "Product Manager & IT Project Manager",
+    "title": "Product - Project Manager & ΙΤ Business Analyst",
     "abstract": "Enthusiastic and results-driven IT Product & Project Manager, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end—from product vision to delivery—aligning strategy, governance, and stakeholder needs with Agile, Hybrid, and Waterfall methodologies. Experienced in driving digital transformation across SaaS products in highly regulated environments, turning technical challenges into actionable business solutions while optimizing processes, mitigating risks, and fostering innovation across SMEs and enterprise organizations."
   },
   "contact": {
@@ -10,7 +10,7 @@
     "phone": "+30 6946692139",
     "location": "Athens, Greece",
     "github": "github.com/GregKazakou",
-    "linkedin": "linkedin.com/in/grigoris-kazakou"
+    "linkedin": "https://www.linkedin.com/in/grigoris-kazakou-870330134"
   },
   "experience": [
     {
@@ -46,7 +46,7 @@
       "title": "Project Consultant",
       "company": "Epsilon Net",
       "location": "Athens, GR",
-      "workType": "On-site",
+      "workType": "Remote",
       "startDate": "2023",
       "endDate": "2022",
       "responsibilities": [
@@ -83,14 +83,14 @@
   ],
   "education": [
     {
-      "degree": "Diploma - Computer Applications Technician",
+      "degree": "Associate Degree (Diploma) in Computer Applications Technician",
       "institution": "National Organization for Certification of Qualifications (EOPPEP)",
       "location": "Greece",
       "year": "2024",
-      "description": ""
+      "description": "Officially recognized under the HQF and aligned with the EQF at Education Level 5 (Associate Degree), under registration code:250409373 GR. This diploma certifies specialized professional skills and applied competencies according to official Hellenic and European educational standards."
     },
     {
-      "degree": "Computer Applications Technician",
+      "degree": "Professional Certification in Computer Applications Technician",
       "institution": "Sivitanidios Technical Institute",
       "location": "Athens, GR",
       "startYear": "2018",
@@ -98,7 +98,7 @@
       "description": "Focus on multimedia, web development, and business software applications. Experience in C#, C++, HTML, CSS, Java, SQL, and cloud technologies."
     },
     {
-      "degree": "Computer and Network Technology",
+      "degree": "Technical High School Diploma in Computer and Network Technology",
       "institution": "Sivitanidios Technical High School",
       "location": "Athens, GR",
       "startYear": "2014",
