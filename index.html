@@ -310,43 +310,21 @@
             text-align: right;
         }
 
-        #skills {
+        /* Skills, Certifications, Languages - all aligned left */
+        #skills, #certifications, #languages {
             line-height: 1.5;
         }
 
-        #skills ul {
+        #skills ul, #certifications ul, #languages ul {
             margin: 1.3mm 0 4mm;
             padding: 0;
+            padding-left: 0;
+            list-style: none;
         }
 
-        #skills li {
+        #skills li, #certifications li, #languages li {
             margin-bottom: 0.8mm;
-        }
-
-        #Certifications {
-            line-height: 1.5;
-        }
-
-        #Certifications ul {
-            margin: 1.3mm 0 4mm;
-            padding: 0;
-        }
-
-        #Certifications li {
-            margin-bottom: 0.8mm;
-        }
-
-        #Languages {
-            line-height: 1.5;
-        }
-
-        #Languages ul {
-            margin: 1.3mm 0 4mm;
-            padding: 0;
-        }
-
-        #Languages li {
-            margin-bottom: 0.8mm;
+            padding-left: 0;
         }
 
         #disclaimer {
@@ -372,20 +350,26 @@
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            .main-block.concise {
-                margin-top: 15mm;
-    }    
-            /* Removed: .main-block.concise { page-break-before: always; } */
-            /* Projects will now flow naturally after Education */
-
+            
             .blocks {
                 page-break-inside: avoid;
             }
 
+            /* Extra space above IT & Digital Transformation on page 2 */
+            .blocks:last-child {
+                margin-top: 15mm;
+            }
+
+            /* Languages section on page 2 - reduced padding, aligned with IT Coordinator */
             #languages {
-             page-break-before: always;   
-             padding-top: 15mm;           
-    }
+                page-break-before: always;
+                padding-top: 5mm;  /* Reduced from 15mm */
+            }
+
+            /* Ensure sidebar background continues */
+            #sidebar {
+                min-height: 100vh;
+            }
         }
 
         @media screen {
@@ -468,7 +452,7 @@
 
     <aside id="sidebar">
         <div class="side-block" id="profile-photo" style="margin-top: 0; text-align: center;">
-            <img src="GregKazakou/CV/img/Photo_Profile.jpg" alt="Grigoris Kazakou" style="width: 140px; height: 157px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="img/Photo_Profile.jpg" alt="Grigoris Kazakou" style="width: 140px; height: 157px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         </div>
         <div class="side-block" id="contact">
             <h1>Contact</h1>
@@ -489,11 +473,6 @@
             <h1>Languages</h1>
             <ul id="languagesList"></ul>
         </div>
-
-        <!--<div id="disclaimer">
-            This résumé was wholly typeset with HTML/CSS —<br>
-            see <code>github.com/SirAlcan/CV</code>
-        </div> -->
     </aside>
 
     <script>
