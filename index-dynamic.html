@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Grigoris Kazakou – Résumé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --page-width: 210mm;
+            --page-height: 297mm;
+            --main-width: 155mm;
+            --sidebar-width: calc(var(--page-width) - var(--main-width));
+            --decorator-horizontal-margin: 5mm;
+            --sidebar-horizontal-padding: 5mm;
+            --decorator-outer-offset-top: 10px;
+            --decorator-outer-offset-left: -5.5px;
+            --decorator-border-width: 1px;
+            --decorator-outer-dim: 9px;
+            --decorator-border: 1px solid #ccc;
+            --row-blocks-padding-top: 5pt;
+            --date-block-width: 18mm;
+            --main-blocks-title-icon-offset-left: -19pt;
+        }
+
+        body {
+            width: var(--page-width);
+            height: var(--page-height);
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+            line-height: 1.3;
+            color: #444;
+            hyphens: auto;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            color: #000;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        #main {
+            float: left;
+            width: var(--main-width);
+            padding: 6.5mm 6.5mm 0 6.5mm;
+            font-size: 10.5pt;
+        }
+
+        #sidebar {
+            float: right;
+            position: relative;
+            width: var(--sidebar-width);
+            height: 100%;
+            padding: 15mm var(--sidebar-horizontal-padding);
+            background-color: #f2f2f2;
+            font-size: 10pt;
+        }
+
+        #title {
+            position: relative;
+            left: 14mm;
+            margin-bottom: 8mm;
+            line-height: 1.2;
+        }
+
+        #title h1 {
+            font-weight: 300;
+            font-size: 18pt;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        #title h1 strong {
+            margin: auto 2pt auto 4pt;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 10pt;
+            text-transform: uppercase;
+        }
+
+        .main-block {
+            margin-top: 2.5mm;
+        }
+
+        #main h2 {
+            position: relative;
+            top: var(--row-blocks-padding-top);
+            left: calc(var(--date-block-width) + var(--decorator-horizontal-margin));
+            font-weight: 400;
+            font-size: 13pt;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        #main h2 > i {
+            position: absolute;
+            left: var(--main-blocks-title-icon-offset-left);
+            z-index: 1;
+            color: #444;
+        }
+
+        #main h2::after {
+            height: calc(var(--row-blocks-padding-top) * 2);
+            position: relative;
+            top: calc(-1 * var(--row-blocks-padding-top));
+            left: calc(-1 * var(--decorator-horizontal-margin));
+            display: block;
+            border-left: var(--decorator-border);
+            z-index: 0;
+            line-height: 0;
+            font-size: 0;
+            content: ' ';
+        }
+
+        #main h2 > .fa-graduation-cap {
+            left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
+            top: 2pt;
+        }
+
+        #main h2 > .fa-suitcase {
+            top: 1pt;
+        }
+
+        #main h2 > .fa-folder-open {
+            top: 1.5pt;
+        }
+
+        .blocks {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .blocks > div {
+            padding-top: var(--row-blocks-padding-top);
+        }
+
+        .date {
+            flex: 0 0 var(--date-block-width);
+            padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
+            padding-right: var(--decorator-horizontal-margin);
+            font-size: 10.5pt;
+            text-align: right;
+            line-height: 1;
+        }
+
+        .date span {
+            display: block;
+        }
+
+        .date span:nth-child(2)::before {
+            position: relative;
+            top: 1pt;
+            right: 5.5pt;
+            display: block;
+            height: 10pt;
+            content: '|';
+        }
+
+        .decorator {
+            flex: 0 0 0;
+            position: relative;
+            width: 2pt;
+            min-height: 100%;
+            border-left: var(--decorator-border);
+        }
+
+        .decorator::before {
+            position: absolute;
+            top: var(--decorator-outer-offset-top);
+            left: var(--decorator-outer-offset-left);
+            content: ' ';
+            display: block;
+            width: var(--decorator-outer-dim);
+            height: var(--decorator-outer-dim);
+            border-radius: calc(var(--decorator-outer-dim) / 2);
+            background-color: #fff;
+        }
+
+        .decorator::after {
+            position: absolute;
+            top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
+            left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
+            content: ' ';
+            display: block;
+            width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+            height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+            border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
+            background-color: #555;
+        }
+
+        .blocks:last-child .decorator {
+            margin-bottom: 6.5mm;
+        }
+
+        .details {
+            flex: 1 0 0;
+            padding-left: var(--decorator-horizontal-margin);
+            padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important;
+        }
+
+        .details header {
+            color: #000;
+        }
+
+        .details h3 {
+            font-size: 10.5pt;
+            font-weight: 400;
+        }
+
+        .main-block:not(.concise) .details div {
+            margin: 0.18in 0 0.1in 0;
+        }
+
+        .main-block:not(.concise) .blocks:last-child .details div {
+            margin-bottom: 0;
+        }
+
+        .details .place {
+            float: left;
+            font-size: 10pt;
+        }
+
+        .details .location {
+            float: right;
+            font-size: 10pt;
+        }
+
+        .details div {
+            clear: both;
+        }
+
+        .details .location::before {
+            display: inline-block;
+            position: relative;
+            right: 3pt;
+            top: 0.25pt;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-style: normal;
+            text-decoration: inherit;
+            content: "\f041";
+        }
+
+        #main ul {
+            padding-left: 1.8mm;
+            margin: 2mm 0;
+        }
+
+        #main li {
+            margin: 0 0 0.6mm 0;
+        }
+
+        #main li::before {
+            position: relative;
+            margin-left: -4.25pt;
+            content: '• ';
+        }
+
+        .details .concise ul {
+            margin: 0 !important;
+        }
+
+        .details .concise li {
+            margin: 0 !important;
+        }
+
+        #sidebar h1 {
+            font-weight: 400;
+            font-size: 13pt;
+            text-transform: uppercase;
+        }
+
+        .side-block {
+            margin-top: 12mm;
+        }
+
+        .side-block:first-child {
+            margin-top: 0;
+        }
+
+        #contact ul {
+            margin-top: 1.3mm;
+            padding-left: 0;
+            font-family: "Source Code Pro", monospace;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+
+        #contact li > i {
+            width: 9pt;
+            text-align: right;
+        }
+
+        #skills {
+            line-height: 1.5;
+        }
+
+        #skills ul {
+            margin: 1.3mm 0 4mm;
+            padding: 0;
+        }
+
+        #skills li {
+            margin-bottom: 0.8mm;
+        }
+
+        #disclaimer {
+            position: absolute;
+            bottom: var(--sidebar-horizontal-padding);
+            right: var(--sidebar-horizontal-padding);
+            font-size: 10pt;
+            font-style: italic;
+            line-height: 1.1;
+            text-align: right;
+            color: #777;
+        }
+
+        #disclaimer code {
+            color: #666;
+            font-family: "Source Code Pro", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            .main-block.concise {
+                page-break-before: always;
+            }
+
+            .blocks {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media screen {
+            body {
+                margin: 20px auto;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+            
+            .web-buttons {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+            }
+            
+            .web-buttons button {
+                background: #2563eb;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-size: 14px;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+                transition: all 0.3s ease;
+            }
+            
+            .web-buttons button:hover {
+                background: #1d4ed8;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            }
+        }
+
+        @media print {
+            .web-buttons {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body lang="en">
+    <div class="web-buttons">
+        <button onclick="window.print()">🖨️ Print / Save PDF</button>
+    </div>
+
+    <section id="main">
+        <header id="title">
+            <h1><span id="firstName">Loading</span> <strong id="lastName">...</strong></h1>
+            <span class="subtitle" id="jobTitle">Loading...</span>
+        </header>
+
+        <section class="main-block" style="margin-bottom: 8mm;">
+            <p id="abstract" style="font-size: 10pt; line-height: 1.5; text-align: justify; color: #444;">
+                Loading...
+            </p>
+        </section>
+
+        <section class="main-block">
+            <h2>
+                <i class="fa fa-suitcase"></i> Experience
+            </h2>
+            <div id="experienceContainer"></div>
+        </section>
+
+        <section class="main-block">
+            <h2>
+                <i class="fa fa-graduation-cap"></i> Education
+            </h2>
+            <div id="educationContainer"></div>
+        </section>
+
+        <section class="main-block concise">
+            <h2>
+                <i class="fa fa-folder-open"></i> Key Projects
+            </h2>
+            <div id="projectsContainer"></div>
+        </section>
+    </section>
+
+    <aside id="sidebar">
+        <div class="side-block" id="contact">
+            <h1>Contact</h1>
+            <ul id="contactList"></ul>
+        </div>
+
+        <div class="side-block" id="skills">
+            <h1>Skills</h1>
+            <ul id="skillsList"></ul>
+        </div>
+
+        <div class="side-block" id="certifications">
+            <h1>Certifications</h1>
+            <ul id="certificationsList"></ul>
+        </div>
+
+        <div class="side-block" id="languages">
+            <h1>Languages</h1>
+            <ul id="languagesList"></ul>
+        </div>
+
+        <div id="disclaimer">
+            This résumé was wholly typeset with HTML/CSS —<br>
+            see <code>github.com/SirAlcan/CV</code>
+        </div>
+    </aside>
+
+    <script>
+        // Load CV data from JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                // Personal Info
+                document.getElementById('firstName').textContent = data.personal.firstName;
+                document.getElementById('lastName').textContent = data.personal.lastName;
+                document.getElementById('jobTitle').textContent = data.personal.title;
+                document.getElementById('abstract').textContent = data.personal.abstract;
+
+                // Contact
+                const contactList = document.getElementById('contactList');
+                contactList.innerHTML = `
+                    <li><i class="fa fa-envelope"></i> ${data.contact.email}</li>
+                    <li><i class="fa fa-phone"></i> ${data.contact.phone}</li>
+                    <li><i class="fa fa-map-marker"></i> ${data.contact.location}</li>
+                    <li><i class="fab fa-github"></i> ${data.contact.github}</li>
+                    <li><i class="fab fa-linkedin"></i> ${data.contact.linkedin}</li>
+                `;
+
+                // Experience
+                const experienceContainer = document.getElementById('experienceContainer');
+                data.experience.forEach(exp => {
+                    const expBlock = document.createElement('section');
+                    expBlock.className = 'blocks';
+                    expBlock.innerHTML = `
+                        <div class="date">
+                            <span>${exp.startDate}</span><span>${exp.endDate}</span>
+                        </div>
+                        <div class="decorator"></div>
+                        <div class="details">
+                            <header>
+                                <h3>${exp.title} ${exp.workType ? `<span style="font-size: 8pt; color: #888; font-weight: 300;">(${exp.workType})</span>` : ''}</h3>
+                                <span class="place">${exp.company}</span>
+                                <span class="location">${exp.location}</span>
+                            </header>
+                            <div>
+                                <ul>
+                                    ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    `;
+                    experienceContainer.appendChild(expBlock);
+                });
+
+                // Education
+                const educationContainer = document.getElementById('educationContainer');
+                data.education.forEach(edu => {
+                    const eduBlock = document.createElement('section');
+                    eduBlock.className = 'blocks';
+                    const dateHTML = edu.year 
+                        ? `<span>${edu.year}</span>` 
+                        : `<span>${edu.startYear}</span><span>${edu.endYear}</span>`;
+                    eduBlock.innerHTML = `
+                        <div class="date">
+                            ${dateHTML}
+                        </div>
+                        <div class="decorator"></div>
+                        <div class="details">
+                            <header>
+                                <h3>${edu.degree}</h3>
+                                <span class="place">${edu.institution}</span>
+                                <span class="location">${edu.location}</span>
+                            </header>
+                            ${edu.description ? `<div>${edu.description}</div>` : ''}
+                        </div>
+                    `;
+                    educationContainer.appendChild(eduBlock);
+                });
+
+                // Projects
+                const projectsContainer = document.getElementById('projectsContainer');
+                data.projects.forEach(proj => {
+                    const projBlock = document.createElement('section');
+                    projBlock.className = 'blocks';
+                    projBlock.innerHTML = `
+                        <div class="date"></div>
+                        <div class="decorator"></div>
+                        <div class="details">
+                            <header>
+                                <h3>${proj.name}</h3>
+                                <span class="place">${proj.company}</span>
+                            </header>
+                            <div>${proj.description}</div>
+                        </div>
+                    `;
+                    projectsContainer.appendChild(projBlock);
+                });
+
+                // Skills
+                const skillsList = document.getElementById('skillsList');
+                skillsList.innerHTML = data.skills.map(skill => `<li>${skill}</li>`).join('');
+
+                // Certifications
+                const certificationsList = document.getElementById('certificationsList');
+                certificationsList.innerHTML = data.certifications.map(cert => `<li>${cert}</li>`).join('');
+
+                // Languages
+                const languagesList = document.getElementById('languagesList');
+                languagesList.innerHTML = data.languages.map(lang => `<li>${lang.language} (${lang.level})</li>`).join('');
+            })
+            .catch(error => {
+                console.error('Error loading CV data:', error);
+                document.getElementById('abstract').textContent = 'Error loading CV data. Please check console.';
+            });
+    </script>
+</body>
+</html>

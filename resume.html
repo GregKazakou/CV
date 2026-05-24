@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Grigoris Kazakou – Résumé</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --page-width: 210mm;
+            --page-height: 297mm;
+            --main-width: 155mm;
+            --sidebar-width: calc(var(--page-width) - var(--main-width));
+            --decorator-horizontal-margin: 5mm;
+            --sidebar-horizontal-padding: 5mm;
+            --decorator-outer-offset-top: 10px;
+            --decorator-outer-offset-left: -5.5px;
+            --decorator-border-width: 1px;
+            --decorator-outer-dim: 9px;
+            --decorator-border: 1px solid #ccc;
+            --row-blocks-padding-top: 5pt;
+            --date-block-width: 18mm;
+            --main-blocks-title-icon-offset-left: -19pt;
+        }
+
+        body {
+            width: var(--page-width);
+            height: var(--page-height);
+            margin: 0;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+            line-height: 1.3;
+            color: #444;
+            hyphens: auto;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            color: #000;
+        }
+
+        li {
+            list-style-type: none;
+        }
+
+        /* Main content area */
+        #main {
+            float: left;
+            width: var(--main-width);
+            padding: 6.5mm 6.5mm 0 6.5mm;
+            font-size: 10pt;
+        }
+
+        /* Sidebar */
+        #sidebar {
+            float: right;
+            position: relative;
+            width: var(--sidebar-width);
+            height: 100%;
+            padding: 15mm var(--sidebar-horizontal-padding);
+            background-color: #f2f2f2;
+            font-size: 10pt;
+        }
+
+        /* Title section */
+        #title {
+            position: relative;
+            left: 14mm;
+            margin-bottom: 8mm;
+            line-height: 1.2;
+        }
+
+        #title h1 {
+            font-weight: 300;
+            font-size: 18pt;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        #title h1 strong {
+            margin: auto 2pt auto 4pt;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 10pt;
+            text-transform: uppercase;
+        }
+
+        /* Main blocks */
+        .main-block {
+            margin-top: 2.5mm;
+        }
+
+        #main h2 {
+            position: relative;
+            top: var(--row-blocks-padding-top);
+            left: calc(var(--date-block-width) + var(--decorator-horizontal-margin));
+            font-weight: 400;
+            font-size: 13pt;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        #main h2 > i {
+            position: absolute;
+            left: var(--main-blocks-title-icon-offset-left);
+            z-index: 1;
+            color: #444;
+        }
+
+        #main h2::after {
+            height: calc(var(--row-blocks-padding-top) * 2);
+            position: relative;
+            top: calc(-1 * var(--row-blocks-padding-top));
+            left: calc(-1 * var(--decorator-horizontal-margin));
+            display: block;
+            border-left: var(--decorator-border);
+            z-index: 0;
+            line-height: 0;
+            font-size: 0;
+            content: ' ';
+        }
+
+        /* Icon adjustments */
+        #main h2 > .fa-graduation-cap {
+            left: calc(var(--main-blocks-title-icon-offset-left) - 2pt);
+            top: 2pt;
+        }
+
+        #main h2 > .fa-suitcase {
+            top: 1pt;
+        }
+
+        #main h2 > .fa-folder-open {
+            top: 1.5pt;
+        }
+
+        #main h2 > .fa-certificate {
+            top: 1pt;
+        }
+
+        /* Row blocks */
+        .blocks {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        .blocks > div {
+            padding-top: var(--row-blocks-padding-top);
+        }
+
+        .date {
+            flex: 0 0 var(--date-block-width);
+            padding-top: calc(var(--row-blocks-padding-top) + 2.5pt) !important;
+            padding-right: var(--decorator-horizontal-margin);
+            font-size: 8.5pt;
+            text-align: right;
+            line-height: 1;
+        }
+
+        .date span {
+            display: block;
+        }
+
+        .date span:nth-child(2)::before {
+            position: relative;
+            top: 1pt;
+            right: 5.5pt;
+            display: block;
+            height: 10pt;
+            content: '|';
+        }
+
+        /* Decorator (timeline) */
+        .decorator {
+            flex: 0 0 0;
+            position: relative;
+            width: 2pt;
+            min-height: 100%;
+            border-left: var(--decorator-border);
+        }
+
+        .decorator::before {
+            position: absolute;
+            top: var(--decorator-outer-offset-top);
+            left: var(--decorator-outer-offset-left);
+            content: ' ';
+            display: block;
+            width: var(--decorator-outer-dim);
+            height: var(--decorator-outer-dim);
+            border-radius: calc(var(--decorator-outer-dim) / 2);
+            background-color: #fff;
+        }
+
+        .decorator::after {
+            position: absolute;
+            top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
+            left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
+            content: ' ';
+            display: block;
+            width: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+            height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+            border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
+            background-color: #555;
+        }
+
+        .blocks:last-child .decorator {
+            margin-bottom: 6.5mm;
+        }
+
+        /* Details section */
+        .details {
+            flex: 1 0 0;
+            padding-left: var(--decorator-horizontal-margin);
+            padding-top: calc(var(--row-blocks-padding-top) - 0.5pt) !important;
+        }
+
+        .details header {
+            color: #000;
+        }
+
+        .details h3 {
+            font-size: 10.5pt;
+            font-weight: 400;
+        }
+
+        .main-block:not(.concise) .details div {
+            margin: 0.18in 0 0.1in 0;
+        }
+
+        .main-block:not(.concise) .blocks:last-child .details div {
+            margin-bottom: 0;
+        }
+
+        .details .place {
+            float: left;
+            font-size: 9pt;
+        }
+
+        .details .location {
+            float: right;
+            font-size: 9pt;
+        }
+
+        .details div {
+            clear: both;
+        }
+
+        .details .location::before {
+            display: inline-block;
+            position: relative;
+            right: 3pt;
+            top: 0.25pt;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-style: normal;
+            text-decoration: inherit;
+            content: "\f041";
+        }
+
+        /* Lists */
+        #main ul {
+            padding-left: 1.8mm;
+            margin: 2mm 0;
+        }
+
+        #main li {
+            margin: 0 0 0.6mm 0;
+        }
+
+        #main li::before {
+            position: relative;
+            margin-left: -4.25pt;
+            content: '• ';
+        }
+
+        .details .concise ul {
+            margin: 0 !important;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+            columns: 2;
+        }
+
+        .details .concise li {
+            margin: 0 !important;
+        }
+
+        /* Sidebar sections */
+        #sidebar h1 {
+            font-weight: 400;
+            font-size: 12pt;
+            text-transform: uppercase;
+        }
+
+        .side-block {
+            margin-top: 12mm;
+        }
+
+        .side-block:first-child {
+            margin-top: 0;
+        }
+
+        #contact ul {
+            margin-top: 1.3mm;
+            padding-left: 0;
+            font-family: "Source Code Pro", monospace;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+
+        #contact li > i {
+            width: 9pt;
+            text-align: right;
+        }
+
+        #skills {
+            line-height: 1.5;
+        }
+
+        #skills ul {
+            margin: 1.3mm 0 4mm;
+            padding: 0;
+        }
+
+        #skills li {
+            margin-bottom: 0.8mm;
+        }
+
+        /* Disclaimer */
+        #disclaimer {
+            position: absolute;
+            bottom: var(--sidebar-horizontal-padding);
+            right: var(--sidebar-horizontal-padding);
+            font-size: 7.5pt;
+            font-style: italic;
+            line-height: 1.1;
+            text-align: right;
+            color: #777;
+        }
+
+        #disclaimer code {
+            color: #666;
+            font-family: "Source Code Pro", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* Print adjustments */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            /* Force Key Projects to start on page 2 */
+            .main-block.concise {
+                page-break-before: always;
+            }
+
+            /* Prevent sections from breaking across pages */
+            .blocks {
+                page-break-inside: avoid;
+            }
+        }
+
+        /* Web view enhancements */
+        @media screen {
+            body {
+                margin: 20px auto;
+                box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            }
+            
+            .web-buttons {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                z-index: 1000;
+            }
+            
+            .web-buttons button {
+                background: #2563eb;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 6px;
+                font-size: 14px;
+                cursor: pointer;
+                box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+                transition: all 0.3s ease;
+            }
+            
+            .web-buttons button:hover {
+                background: #1d4ed8;
+                transform: translateY(-2px);
+                box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
+            }
+        }
+
+        @media print {
+            .web-buttons {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body lang="en">
+    <div class="web-buttons">
+        <button onclick="window.print()">🖨️ Print / Save PDF</button>
+    </div>
+
+    <section id="main">
+        <header id="title">
+            <h1>Grigoris <strong>Kazakou</strong></h1>
+            <span class="subtitle">Product Manager &amp; IT Project Manager</span>
+        </header>
+
+        <section class="main-block" style="margin-bottom: 8mm;">
+            <p style="font-size: 8pt; line-height: 1.5; text-align: justify; color: #444;">
+                Enthusiastic and results-driven IT Product & Project Manager, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end—from product vision to delivery—aligning strategy, governance, and stakeholder needs with Agile, Hybrid, and Waterfall methodologies. Experienced in driving digital transformation across SaaS products in highly regulated environments, turning technical challenges into actionable business solutions while optimizing processes, mitigating risks, and fostering innovation across SMEs and enterprise organizations.
+            </p>
+        </section>
+
+        <section class="main-block">
+            <h2>
+                <i class="fa fa-suitcase"></i> Experience
+            </h2>
+            <section class="blocks">
+                <div class="date">
+                    <span>present</span><span>2026</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Product Manager <span style="font-size: 8pt; color: #888; font-weight: 300;">(Hybrid)</span></h3>
+                        <span class="place">Entersoftone / Impact</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Lead end-to-end product management for 3 SaaS products in highly regulated environments, driving feature development and roadmap prioritization</li>
+                            <li>Coordinate agile workflows using Azure DevOps and Wrike, managing sprint planning and release cycles across multiple development teams</li>
+                            <li>Establish comprehensive QA processes with automated testing frameworks (Robot Framework) and API validation (Postman Flows)</li>
+                            <li>Collaborate with engineering to define technical requirements and validate API specifications using Swagger and Apidog</li>
+                            <li>Manage version control and developer collaboration through GitHub with strict documentation and compliance protocols</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>2025</span><span>2023</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Project Manager <span style="font-size: 8pt; color: #888; font-weight: 300;">(Hybrid)</span></h3>
+                        <span class="place">Entersoftone / Impact</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Managed portfolio of 18–22 concurrent projects, leading end-to-end delivery with large enterprise clients</li>
+                            <li>Operated in complex, regulated environments ensuring alignment across business, compliance, and technical requirements</li>
+                            <li>Applied Waterfall, Hybrid, and Agile methodologies for effective project delivery and change management</li>
+                            <li>Identified business needs, analyzed stakeholder expectations, and monitored regulatory updates to inform project objectives</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>2023</span><span>2022</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Project Consultant <span style="font-size: 8pt; color: #888; font-weight: 300;">(On-site)</span></h3>
+                        <span class="place">Epsilon Net</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Led initiatives to modernize client business processes through digital invoicing, ERP, EDI, WMS, CRM, and eCommerce solutions</li>
+                            <li>Analyzed business requirements and designed solutions aligned with customer workflows, implementing PEPPOL and MyData standards</li>
+                            <li>Collaborated with development teams to translate business needs into technical tasks and ensure seamless API integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>2022</span><span>2021</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Greek Military Service <span style="font-size: 8pt; color: #888; font-weight: 300;">(On-site)</span></h3>
+                        <span class="place">401 General Military Hospital</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Provided technical support, troubleshooting hardware and network issues</li>
+                            <li>Assisted in administration of resources and managed communication systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>2021</span><span>2017</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>IT & Digital Transformation Coordinator <span style="font-size: 8pt; color: #888; font-weight: 300;">(On-site)</span></h3>
+                        <span class="place">Sposa Ltd</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        <ul>
+                            <li>Drove digital transformation by identifying technical challenges and implementing solutions to enhance business performance</li>
+                            <li>Collaborated with stakeholders to implement ERP, CRM, and eCommerce platforms, optimizing system performance</li>
+                            <li>Managed IT infrastructure including hardware, software, networks, servers, and operating systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="main-block">
+            <h2>
+                <i class="fa fa-graduation-cap"></i> Education
+            </h2>
+            <section class="blocks">
+                <div class="date">
+                    <span>2024</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Diploma - Computer Applications Technician</h3>
+                        <span class="place">National Organization for Certification of Qualifications (EOPPEP)</span>
+                        <span class="location">Greece</span>
+                    </header>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>2018</span><span>2015</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Computer Applications Technician</h3>
+                        <span class="place">Sivitanidios Technical Institute</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        Focus on multimedia, web development, and business software applications. Experience in C#, C++, HTML, CSS, Java, SQL, and cloud technologies.
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date">
+                    <span>2014</span><span>2012</span>
+                </div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Computer and Network Technology</h3>
+                        <span class="place">Sivitanidios Technical High School</span>
+                        <span class="location">Athens, GR</span>
+                    </header>
+                    <div>
+                        Specialization in computer hardware, network technician, network installation, maintenance, and systems troubleshooting.
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <section class="main-block concise">
+            <h2>
+                <i class="fa fa-folder-open"></i> Key Projects
+            </h2>
+            <section class="blocks">
+                <div class="date"></div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>SaaS Product Suite Management</h3>
+                        <span class="place">Entersoftone</span>
+                    </header>
+                    <div>
+                        Led end-to-end product management for 3 regulated SaaS products, implementing automated QA frameworks and API validation workflows.
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date"></div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>Enterprise Project Portfolio (18-22 Projects)</h3>
+                        <span class="place">Entersoftone</span>
+                    </header>
+                    <div>
+                        Managed concurrent enterprise projects using Waterfall, Hybrid, and Agile methodologies in complex, regulated environments.
+                    </div>
+                </div>
+            </section>
+            <section class="blocks">
+                <div class="date"></div>
+                <div class="decorator"></div>
+                <div class="details">
+                    <header>
+                        <h3>MyData & E-Invoicing Integration</h3>
+                        <span class="place">Epsilon Net</span>
+                    </header>
+                    <div>
+                        Coordinated electronic invoicing compliance rollout implementing PEPPOL and MyData standards for enterprise clients.
+                    </div>
+                </div>
+            </section>
+        </section>
+    </section>
+
+    <aside id="sidebar">
+        <div class="side-block" id="contact">
+            <h1>Contact</h1>
+            <ul>
+                <li><i class="fa fa-envelope"></i> gregkazakou@gmail.com</li>
+                <li><i class="fa fa-phone"></i> +30 694 669 2139</li>
+                <li><i class="fa fa-map-marker"></i> Athens, Greece</li>
+                <li><i class="fab fa-github"></i> github.com/SirAlcan</li>
+                <li><i class="fab fa-linkedin"></i> linkedin.com/in/grigoris-kazakou</li>
+            </ul>
+        </div>
+
+        <div class="side-block" id="skills">
+            <h1>Skills</h1>
+            <ul>
+                <li>Product Management</li>
+                <li>Project Management</li>
+                <li>Agile & Scrum</li>
+                <li>Azure DevOps & Wrike</li>
+                <li>SaaS Platforms</li>
+                <li>API Development & Testing</li>
+                <li>Robot Framework & Postman</li>
+                <li>SQL & Databases</li>
+                <li>GitHub & Version Control</li>
+                <li>ERP/CRM Systems</li>
+                <li>Quality Assurance</li>
+                <li>Stakeholder Management</li>
+            </ul>
+        </div>
+
+        <div class="side-block" id="skills">
+            <h1>Certifications</h1>
+            <ul>
+                <li>PMP - Project Management Professional (In Progress)</li>
+                <li>EF SET English Certificate (C2 Proficient)</li>
+                <li>Web & Mobile Apps Specialist (AUEB)</li>
+                <li>Cyber Security & Social Networks</li>
+            </ul>
+        </div>
+
+        <div class="side-block" id="skills">
+            <h1>Languages</h1>
+            <ul>
+                <li>Greek (Native)</li>
+                <li>English (C2 Proficient)</li>
+                <li>Russian (Intermediate)</li>
+                <li>Romanian (Intermediate)</li>
+            </ul>
+        </div>
+
+        <div id="disclaimer">
+            This résumé was wholly typeset with HTML/CSS —<br>
+            see <code>github.com/SirAlcan/CV</code>
+        </div>
+    </aside>
+</body>
+</html>

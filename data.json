@@ -1,0 +1,152 @@
+{
+  "personal": {
+    "firstName": "Grigoris",
+    "lastName": "Kazakou",
+    "title": "Product Manager & IT Project Manager",
+    "abstract": "Enthusiastic and results-driven IT Product & Project Manager, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end—from product vision to delivery—aligning strategy, governance, and stakeholder needs with Agile, Hybrid, and Waterfall methodologies. Experienced in driving digital transformation across SaaS products in highly regulated environments, turning technical challenges into actionable business solutions while optimizing processes, mitigating risks, and fostering innovation across SMEs and enterprise organizations."
+  },
+  "contact": {
+    "email": "gregkazakou@gmail.com",
+    "phone": "+30 6946692139",
+    "location": "Athens, Greece",
+    "github": "github.com/GregKazakou",
+    "linkedin": "linkedin.com/in/grigoris-kazakou"
+  },
+  "experience": [
+    {
+      "title": "Product Manager",
+      "company": "Entersoftone / Impact",
+      "location": "Athens, GR",
+      "workType": "Hybrid",
+      "startDate": "present",
+      "endDate": "2026",
+      "responsibilities": [
+        "Lead end-to-end product management for 3 SaaS products in highly regulated environments, driving feature development and roadmap prioritization",
+        "Coordinate agile workflows using Azure DevOps and Wrike, managing sprint planning and release cycles across multiple development teams",
+        "Establish comprehensive QA processes with automated testing frameworks (Robot Framework) and API validation (Postman Flows)",
+        "Collaborate with engineering to define technical requirements and validate API specifications using Swagger and Apidog",
+        "Manage version control and developer collaboration through GitHub with strict documentation and compliance protocols"
+      ]
+    },
+    {
+      "title": "Project Manager",
+      "company": "Entersoftone / Impact",
+      "location": "Athens, GR",
+      "workType": "Hybrid",
+      "startDate": "2025",
+      "endDate": "2023",
+      "responsibilities": [
+        "Managed portfolio of 18–22 concurrent projects, leading end-to-end delivery with large enterprise clients",
+        "Operated in complex, regulated environments ensuring alignment across business, compliance, and technical requirements",
+        "Applied Waterfall, Hybrid, and Agile methodologies for effective project delivery and change management",
+        "Identified business needs, analyzed stakeholder expectations, and monitored regulatory updates to inform project objectives"
+      ]
+    },
+    {
+      "title": "Project Consultant",
+      "company": "Epsilon Net",
+      "location": "Athens, GR",
+      "workType": "On-site",
+      "startDate": "2023",
+      "endDate": "2022",
+      "responsibilities": [
+        "Led initiatives to modernize client business processes through digital invoicing, ERP, EDI, WMS, CRM, and eCommerce solutions",
+        "Analyzed business requirements and designed solutions aligned with customer workflows, implementing PEPPOL and MyData standards",
+        "Collaborated with development teams to translate business needs into technical tasks and ensure seamless API integration"
+      ]
+    },
+    {
+      "title": "Greek Military Service",
+      "company": "401 General Military Hospital",
+      "location": "Athens, GR",
+      "workType": "On-site",
+      "startDate": "2022",
+      "endDate": "2021",
+      "responsibilities": [
+        "Provided technical support, troubleshooting hardware and network issues",
+        "Assisted in administration of resources and managed communication systems"
+      ]
+    },
+    {
+      "title": "IT & Digital Transformation Coordinator",
+      "company": "Sposa Ltd",
+      "location": "Athens, GR",
+      "workType": "On-site",
+      "startDate": "2021",
+      "endDate": "2017",
+      "responsibilities": [
+        "Drove digital transformation by identifying technical challenges and implementing solutions to enhance business performance",
+        "Collaborated with stakeholders to implement ERP, CRM, and eCommerce platforms, optimizing system performance",
+        "Managed IT infrastructure including hardware, software, networks, servers, and operating systems"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Diploma - Computer Applications Technician",
+      "institution": "National Organization for Certification of Qualifications (EOPPEP)",
+      "location": "Greece",
+      "year": "2024",
+      "description": ""
+    },
+    {
+      "degree": "Computer Applications Technician",
+      "institution": "Sivitanidios Technical Institute",
+      "location": "Athens, GR",
+      "startYear": "2018",
+      "endYear": "2015",
+      "description": "Focus on multimedia, web development, and business software applications. Experience in C#, C++, HTML, CSS, Java, SQL, and cloud technologies."
+    },
+    {
+      "degree": "Computer and Network Technology",
+      "institution": "Sivitanidios Technical High School",
+      "location": "Athens, GR",
+      "startYear": "2014",
+      "endYear": "2012",
+      "description": "Specialization in computer hardware, network technician, network installation, maintenance, and systems troubleshooting."
+    }
+  ],
+  "projects": [
+    {
+      "name": "SaaS Product Suite Management",
+      "company": "Entersoftone",
+      "description": "Led end-to-end product management for 3 regulated SaaS products, implementing automated QA frameworks and API validation workflows."
+    },
+    {
+      "name": "Enterprise Project Portfolio (18-22 Projects)",
+      "company": "Entersoftone",
+      "description": "Managed concurrent enterprise projects using Waterfall, Hybrid, and Agile methodologies in complex, regulated environments."
+    },
+    {
+      "name": "MyData & E-Invoicing Integration",
+      "company": "Epsilon Net",
+      "description": "Coordinated electronic invoicing compliance rollout implementing PEPPOL and MyData standards for enterprise clients."
+    }
+  ],
+  "skills": [
+    "Product Management",
+    "Project Management",
+    "Agile & Scrum",
+    "Azure DevOps & Wrike",
+    "SaaS Platforms",
+    "API Development & Testing",
+    "Robot Framework & Postman",
+    "SQL & Databases",
+    "GitHub & Version Control",
+    "ERP/CRM Systems",
+    "Quality Assurance",
+    "Stakeholder Management"
+  ],
+  "certifications": [
+    "PMP - Project Management Professional (In Progress)",
+    "EF SET English Certificate (C2 Proficient)",
+    "Web & Mobile Apps Specialist (AUEB)",
+    "Cyber Security & Social Networks"
+  ],
+  "languages": [
+    { "language": "Greek", "level": "Native" },
+    { "language": "English", "level": "C2 Proficient" },
+    { "language": "Russian", "level": "Intermediate" },
+    { "language": "Romanian", "level": "Intermediate" }
+  ]
+}
