@@ -2,8 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Grigoris Kazakou – Resume</title>
+    <title>Grigoris Kazakou - Product Manager & IT Project Manager Resume</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Manager & IT Project Manager with expertise in SaaS, Agile methodologies, Azure DevOps, and digital transformation">
+    <meta name="keywords" content="Product Manager, Project Manager, SaaS, Agile, Scrum, Azure DevOps, ERP, CRM, API, QA, GitHub, Athens Greece">
+    <meta name="author" content="Grigoris Kazakou">
+    
+    <!-- Structured Data for AI/SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Grigoris Kazakou",
+      "jobTitle": "Product Manager & IT Project Manager",
+      "email": "gregkazakou@gmail.com",
+      "telephone": "+30-694-669-2139",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Athens",
+        "addressCountry": "Greece"
+      },
+      "url": "https://github.com/SirAlcan",
+      "sameAs": [
+        "https://www.linkedin.com/in/grigoris-kazakou-870330134",
+        "https://github.com/SirAlcan"
+      ],
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "Sivitanidios Technical Institute"
+        }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Entersoftone / Impact"
+      },
+      "knowsAbout": [
+        "Product Management",
+        "Project Management",
+        "Agile Methodologies",
+        "Azure DevOps",
+        "SaaS Platforms",
+        "API Development",
+        "Quality Assurance",
+        "ERP/CRM Systems"
+      ]
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
@@ -53,6 +99,11 @@
 
         li {
             list-style-type: none;
+        }
+
+        /* ATS-friendly: Use semantic HTML elements */
+        article, section, header, aside {
+            display: block;
         }
 
         #main {
@@ -327,6 +378,15 @@
             padding-left: 0;
         }
 
+        /* ATS-friendly: Hidden text for keyword extraction */
+        .ats-keywords {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+
         #disclaimer {
             position: absolute;
             bottom: var(--sidebar-horizontal-padding);
@@ -363,12 +423,17 @@
             /* Languages section on page 2 - reduced padding, aligned with IT Coordinator */
             #languages {
                 page-break-before: always;
-                padding-top: 5mm;  /* Reduced from 15mm */
+                padding-top: 5mm;
             }
 
             /* Ensure sidebar background continues */
             #sidebar {
                 min-height: 100vh;
+            }
+
+            /* Hide ATS keywords in print */
+            .ats-keywords {
+                display: none;
             }
         }
 
@@ -411,65 +476,71 @@
         }
     </style>
 </head>
-<body lang="en">
+<body lang="en" itemscope itemtype="https://schema.org/Person">
+    <!-- ATS Keywords (hidden but parseable) -->
+    <div class="ats-keywords" role="complementary">
+        Keywords: Product Manager, Project Manager, IT Manager, Business Analyst, SaaS, Agile, Scrum, Waterfall, Hybrid Methodologies, Azure DevOps, Wrike, GitHub, API Development, Robot Framework, Postman, QA Automation, ERP, CRM, Digital Transformation, Stakeholder Management, Athens Greece, Remote Work, Hybrid Work, Team Leadership, Strategic Planning, Technical Product Management
+    </div>
+
     <div class="web-buttons">
         <button onclick="window.print()">🖨️ Print / Save PDF</button>
     </div>
 
-    <section id="main">
+    <article id="main" role="main">
         <header id="title">
-            <h1><span id="firstName">Loading</span> <strong id="lastName">...</strong></h1>
-            <span class="subtitle" id="jobTitle">Loading...</span>
+            <h1 itemprop="name"><span id="firstName">Loading</span> <strong id="lastName">...</strong></h1>
+            <p class="subtitle" itemprop="jobTitle" id="jobTitle">Loading...</p>
         </header>
 
-        <section class="main-block" style="margin-bottom: 8mm;">
-            <p id="abstract" style="font-size: 10pt; line-height: 1.5; text-align: justify; color: #444;">
+        <section class="main-block" aria-label="Professional Summary">
+            <p id="abstract" style="font-size: 10pt; line-height: 1.5; text-align: justify; color: #444;" itemprop="description">
                 Loading...
             </p>
         </section>
 
-        <section class="main-block">
+        <section class="main-block" aria-label="Work Experience">
             <h2>
-                <i class="fa fa-suitcase"></i> Experience
+                <i class="fa fa-suitcase" aria-hidden="true"></i> Experience
             </h2>
             <div id="experienceContainer"></div>
         </section>
 
-        <section class="main-block">
+        <section class="main-block" aria-label="Education">
             <h2>
-                <i class="fa fa-graduation-cap"></i> Education
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i> Education
             </h2>
             <div id="educationContainer"></div>
         </section>
 
-        <section class="main-block concise">
+        <section class="main-block concise" aria-label="Key Projects">
             <h2>
-                <i class="fa fa-folder-open"></i> Key Projects
+                <i class="fa fa-folder-open" aria-hidden="true"></i> Key Projects
             </h2>
             <div id="projectsContainer"></div>
         </section>
-    </section>
+    </article>
 
-    <aside id="sidebar">
+    <aside id="sidebar" role="complementary">
         <div class="side-block" id="profile-photo" style="margin-top: 0; text-align: center;">
-            <img src="img/Photo_Profile.jpg" alt="Grigoris Kazakou" style="width: 140px; height: 157px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <img src="img/Photo_Profile.jpg" alt="Grigoris Kazakou - Product Manager" itemprop="image" style="width: 140px; height: 157px; border-radius: 8px; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
         </div>
-        <div class="side-block" id="contact">
+        
+        <div class="side-block" id="contact" aria-label="Contact Information">
             <h1>Contact</h1>
-            <ul id="contactList"></ul>
+            <ul id="contactList" itemprop="contactPoint"></ul>
         </div>
 
-        <div class="side-block" id="skills">
+        <div class="side-block" id="skills" aria-label="Professional Skills">
             <h1>Skills</h1>
             <ul id="skillsList"></ul>
         </div>
 
-        <div class="side-block" id="certifications">
+        <div class="side-block" id="certifications" aria-label="Certifications">
             <h1>Certifications</h1>
             <ul id="certificationsList"></ul>
         </div>
 
-        <div class="side-block" id="languages">
+        <div class="side-block" id="languages" aria-label="Language Proficiency">
             <h1>Languages</h1>
             <ul id="languagesList"></ul>
         </div>
@@ -489,11 +560,11 @@
                 // Contact
                 const contactList = document.getElementById('contactList');
                 contactList.innerHTML = `
-                    <li><i class="fa fa-envelope"></i> ${data.contact.email}</li>
-                    <li><i class="fa fa-phone"></i> ${data.contact.phone}</li>
-                    <li><i class="fa fa-map-marker"></i> ${data.contact.location}</li>
-                    <li><i class="fab fa-github"></i> ${data.contact.github}</li>
-                    <li><i class="fab fa-linkedin"></i> ${data.contact.linkedin}</li>
+                    <li itemprop="email"><i class="fa fa-envelope" aria-hidden="true"></i> ${data.contact.email}</li>
+                    <li itemprop="telephone"><i class="fa fa-phone" aria-hidden="true"></i> ${data.contact.phone}</li>
+                    <li itemprop="address"><i class="fa fa-map-marker" aria-hidden="true"></i> ${data.contact.location}</li>
+                    <li><i class="fab fa-github" aria-hidden="true"></i> ${data.contact.github}</li>
+                    <li><i class="fab fa-linkedin" aria-hidden="true"></i> ${data.contact.linkedin}</li>
                 `;
 
                 // Experience
@@ -501,24 +572,25 @@
                 data.experience.forEach(exp => {
                     const expBlock = document.createElement('section');
                     expBlock.className = 'blocks';
+                    expBlock.setAttribute('itemscope', '');
+                    expBlock.setAttribute('itemtype', 'https://schema.org/WorkExperience');
                     
-                    // Add page break if specified
                     if (exp.pageBreakBefore) {
                         expBlock.style.pageBreakBefore = 'always';
                     }
                     
                     expBlock.innerHTML = `
                         <div class="date">
-                            <span>${exp.startDate}</span><span>${exp.endDate}</span>
+                            <span itemprop="startDate">${exp.startDate}</span><span itemprop="endDate">${exp.endDate}</span>
                         </div>
                         <div class="decorator"></div>
                         <div class="details">
                             <header>
-                                <h3>${exp.title} ${exp.workType ? `<span style="font-size: 8pt; color: #888; font-weight: 300;">(${exp.workType})</span>` : ''}</h3>
-                                <span class="place">${exp.company}</span>
-                                <span class="location">${exp.location}</span>
+                                <h3 itemprop="jobTitle">${exp.title} ${exp.workType ? `<span style="font-size: 8pt; color: #888; font-weight: 300;">(${exp.workType})</span>` : ''}</h3>
+                                <span class="place" itemprop="employer">${exp.company}</span>
+                                <span class="location" itemprop="jobLocation">${exp.location}</span>
                             </header>
-                            <div>
+                            <div itemprop="description">
                                 <ul>
                                     ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
                                 </ul>
@@ -533,8 +605,9 @@
                 data.education.forEach(edu => {
                     const eduBlock = document.createElement('section');
                     eduBlock.className = 'blocks';
+                    eduBlock.setAttribute('itemscope', '');
+                    eduBlock.setAttribute('itemtype', 'https://schema.org/EducationalOccupationalCredential');
                     
-                    // Add page break if specified
                     if (edu.pageBreakBefore) {
                         eduBlock.style.pageBreakBefore = 'always';
                     }
@@ -549,11 +622,11 @@
                         <div class="decorator"></div>
                         <div class="details">
                             <header>
-                                <h3>${edu.degree}</h3>
-                                <span class="place">${edu.institution}</span>
+                                <h3 itemprop="credentialCategory">${edu.degree}</h3>
+                                <span class="place" itemprop="recognizedBy">${edu.institution}</span>
                                 <span class="location">${edu.location}</span>
                             </header>
-                            ${edu.description ? `<div>${edu.description}</div>` : ''}
+                            ${edu.description ? `<div itemprop="about">${edu.description}</div>` : ''}
                         </div>
                     `;
                     educationContainer.appendChild(eduBlock);
@@ -565,7 +638,6 @@
                     const projBlock = document.createElement('section');
                     projBlock.className = 'blocks';
                     
-                    // Add page break class if specified in JSON
                     if (proj.pageBreakBefore) {
                         projBlock.style.pageBreakBefore = 'always';
                     }
@@ -586,15 +658,15 @@
 
                 // Skills
                 const skillsList = document.getElementById('skillsList');
-                skillsList.innerHTML = data.skills.map(skill => `<li>${skill}</li>`).join('');
+                skillsList.innerHTML = data.skills.map(skill => `<li itemprop="knowsAbout">${skill}</li>`).join('');
 
                 // Certifications
                 const certificationsList = document.getElementById('certificationsList');
-                certificationsList.innerHTML = data.certifications.map(cert => `<li>${cert}</li>`).join('');
+                certificationsList.innerHTML = data.certifications.map(cert => `<li itemprop="hasCredential">${cert}</li>`).join('');
 
                 // Languages
                 const languagesList = document.getElementById('languagesList');
-                languagesList.innerHTML = data.languages.map(lang => `<li>${lang.language} (${lang.level})</li>`).join('');
+                languagesList.innerHTML = data.languages.map(lang => `<li itemprop="knowsLanguage">${lang.language} (${lang.level})</li>`).join('');
             })
             .catch(error => {
                 console.error('Error loading CV data:', error);
