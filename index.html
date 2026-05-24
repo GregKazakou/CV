@@ -352,24 +352,44 @@
                 print-color-adjust: exact;
             }
             
+            /* Prevent blocks from breaking across pages */
             .blocks {
                 page-break-inside: avoid;
             }
 
-            /* Extra space above IT & Digital Transformation on page 2 */
-            .blocks:last-child {
-                margin-top: 15mm;
+            /* Keep titles with their content */
+            .details header {
+                page-break-after: avoid;
             }
 
-            /* Languages section on page 2 - minimal padding */
+            .details h3 {
+                page-break-inside: avoid;
+                page-break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Force IT Coordinator to start on page 2 */
+            #experienceContainer .blocks:last-child {
+                page-break-before: always;
+                padding-top: 0mm;
+            }
+
+            /* Languages section on page 2 */
             #languages {
                 page-break-before: always;
-                padding-top: 5mm;  /* Changed from 5mm to 0mm */
+                padding-top: 0mm;
             }
 
             /* Ensure sidebar background continues */
             #sidebar {
                 min-height: 100vh;
+            }
+
+            /* Better text flow */
+            p, li, div {
+                orphans: 3;
+                widows: 3;
             }
         }
 

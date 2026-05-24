@@ -75,12 +75,12 @@
       "workType": "On-site",
       "startDate": "2021",
       "endDate": "2017",
+      "pageBreakBefore": true,
       "responsibilities": [
         "Drove digital transformation by identifying technical challenges and implementing solutions to enhance business performance",
         "Collaborated with stakeholders to implement ERP, CRM, and eCommerce platforms, optimizing system performance",
         "Managed IT infrastructure including hardware, software, networks, servers, and operating systems"
-      ],
-      "pageBreakBefore": true
+      ]
     }
   ],
   "education": [
@@ -112,7 +112,8 @@
     {
       "name": "SaaS Product Suite Management",
       "company": "Entersoftone",
-      "description": "Led end-to-end product management for 3 regulated SaaS products, implementing automated QA frameworks and API validation workflows."
+      "description": "Led end-to-end product management for 3 regulated SaaS products, implementing automated QA frameworks and API validation workflows.",
+      "pageBreakBefore": true
     },
     {
       "name": "Enterprise Project Portfolio (18-22 Projects)",
