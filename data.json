@@ -1,4 +1,10 @@
 {
+  "fonts": {
+    "body": "Inter", 
+    "headers": "Inter", 
+    "sidebar": "Inter",
+    "contact": "Source Code Pro"  
+  },
   "personal": {
     "firstName": "Grigoris",
     "lastName": "Kazakou, PMP",
