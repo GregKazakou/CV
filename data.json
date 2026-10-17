@@ -91,6 +91,14 @@
   ],
   "education": [
     {
+      "degree": "Bachelor Degree in Computer Science (in progress)",
+      "institution": "Hellenic Open University",
+      "location": "Athens, GR",
+      "startYear": "present",
+      "endYear": "2026",
+      "description": "Comprehensive computer science program covering programming, software engineering, data structures, digital systems, computer networks, artificial intelligence, distributed systems, and mathematics for informatics — combining strong theoretical foundations with hands-on laboratory and project work."
+    },
+    {
       "degree": "Associate Degree (Diploma) in Computer Applications Technician",
       "institution": "National Organization for Certification of Qualifications (EOPPEP)",
       "location": "Athens, GR",
