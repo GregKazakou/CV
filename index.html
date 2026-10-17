@@ -631,5 +631,15 @@
                 document.getElementById('abstract').textContent = 'Error loading CV data. Please check console.';
             });
     </script>
+      <!-- GoatCounter analytics -->
+    <script data-goatcounter="https://gregkazakou.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+    <script>
+      window.addEventListener('beforeprint', function () {
+        if (window.goatcounter && window.goatcounter.count) {
+          window.goatcounter.count({ path: 'print-cv', title: 'CV Printed', event: true });
+        }
+      });
+    </script>
 </body>
 </html>
