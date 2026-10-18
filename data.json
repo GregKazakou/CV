@@ -1,9 +1,9 @@
 {
   "fonts": {
-    "body": "Inter", 
-    "headers": "Inter", 
+    "body": "Inter",
+    "headers": "Inter",
     "sidebar": "Inter",
-    "contact": "Source Code Pro"  
+    "contact": "Source Code Pro"
   },
   "personal": {
     "firstName": "Grigoris",
@@ -28,8 +28,8 @@
       "startDate": "2026",
       "endDate": "present",
       "responsibilities": [
-       "Lead end-to-end product management for 3 SaaS products in highly regulated environments, from feature definition to release and roadmap prioritization",
-       "Author product features, acceptance criteria, test plans, and release changelogs, keeping engineering, QA, and business stakeholders aligned on each delivery",
+        "Lead end-to-end product management for 3 SaaS products in highly regulated environments, from feature definition to release and roadmap prioritization",
+        "Author product features, acceptance criteria, test plans, and release changelogs, keeping engineering, QA, and business stakeholders aligned on each delivery",
         "Collaborate with engineering to define technical and business requirements and validate API specifications (Swagger, Postman, Apidog)",
         "Establish QA and governance practices with automated testing (Robot Framework) and API validation to make quality a repeatable, scalable process",
         "Coordinate agile workflows and release cycles across multiple teams using Azure DevOps and Wrike, aligning technical and business priorities",
@@ -150,26 +150,79 @@
     "Cybersecurity & Social Networks — 2016"
   ],
   "skills": [
-    "Product Management",
-    "Project Management",
-    "Agile & Scrum",
-    "Waterfall & Hybrid Delivery",
-    "Requirements & Acceptance Criteria",
-    "Test Planning & QA",
-    "Release & Change Management",
     "Azure DevOps",
+    "Microsoft Azure",
     "Wrike",
     "GitHub",
-    "API Testing (Postman, Swagger)",
-    "Robot Framework",
     "VS Code",
+    "API Testing (Postman, Swagger)",
+    "REST API",
+    "Robot Framework",
+    "SQL",
+    "Microsoft SQL Server",
+    "JSON",
+    "XML",
+    "CSV",
+    "Data Analysis",
+    "Data Mapping",
+    "Excel & MS Office",
+    "Python",
+    "AI / LLM Tools",
     "ERP/CRM Systems",
-    "Stakeholder Management"
+    "Microsoft Dynamics NAV",
+    "SaaS Platforms",
+    "SFTP"
   ],
   "languages": [
-    { "language": "Greek", "level": "Native" },
-    { "language": "English", "level": "C2 Proficient" },
-    { "language": "Russian", "level": "Intermediate" },
-    { "language": "Romanian", "level": "Intermediate" }
+    {
+      "language": "Greek",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "C2 Proficient"
+    },
+    {
+      "language": "Russian",
+      "level": "Intermediate"
+    },
+    {
+      "language": "Romanian",
+      "level": "Intermediate"
+    }
+  ],
+  "atsKeywords": [
+    "Product Management",
+    "Project Management",
+    "Agile Project Management",
+    "Software Project Management",
+    "Business Analysis",
+    "Requirements Analysis",
+    "Agile Methodologies",
+    "Agile & Waterfall Methodologies",
+    "Scrum",
+    "Kanban",
+    "SDLC",
+    "Stakeholder Management",
+    "Team Coordination",
+    "Team Management",
+    "Change Management",
+    "Release Management",
+    "Quality Assurance",
+    "Test Planning",
+    "Business Process Improvement",
+    "Digital Transformation",
+    "Strategy",
+    "Roadmap Planning",
+    "Problem Solving",
+    "Analytical Skills",
+    "Customer Satisfaction",
+    "Project Implementation",
+    "ROI Analysis",
+    "E-invoicing",
+    "MyData",
+    "PEPPOL",
+    "Banking",
+    "Financial Instruments"
   ]
 }

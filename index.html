@@ -341,31 +341,33 @@
         #atsVersion {
             display: none;
             width: var(--page-width);
-            padding: 16mm;
+            padding: 11mm 13mm;
             font-family: "Open Sans", sans-serif;
             font-weight: 300;
             color: #000;
-            font-size: 10.5pt;
-            line-height: 1.4;
+            font-size: 9.3pt;
+            line-height: 1.28;
         }
-        #atsVersion h1 { font-size: 20pt; font-weight: 600; letter-spacing: 0.5pt; }
-        #atsVersion .ats-role { font-size: 11pt; color: #333; margin: 2pt 0 6pt; font-weight: 400; }
-        #atsVersion .ats-contact { font-size: 9.5pt; color: #333; margin-bottom: 10pt; }
+        #atsVersion h1 { font-size: 17pt; font-weight: 600; letter-spacing: 0.3pt; }
+        #atsVersion .ats-role { font-size: 10pt; color: #333; margin: 1pt 0 3pt; font-weight: 400; }
+        #atsVersion .ats-contact { font-size: 8.7pt; color: #333; margin-bottom: 5pt; line-height: 1.45; }
         #atsVersion h2 {
-            font-size: 11.5pt; font-weight: 600; text-transform: uppercase;
-            letter-spacing: 0.5pt; border-bottom: 1.5px solid #333;
-            padding-bottom: 3pt; margin: 13pt 0 7pt;
+            font-size: 10.5pt; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.4pt; border-bottom: 1.2px solid #333;
+            padding-bottom: 2pt; margin: 7pt 0 4pt;
         }
-        #atsVersion .ats-summary { text-align: justify; margin-bottom: 4pt; }
-        #atsVersion .ats-entry { margin-bottom: 8pt; page-break-inside: avoid; }
+        #atsVersion .ats-summary { text-align: justify; margin-bottom: 2pt; }
+        #atsVersion .ats-entry { margin-bottom: 4.5pt; page-break-inside: avoid; }
         #atsVersion .ats-row { display: flex; justify-content: space-between; align-items: baseline; }
-        #atsVersion .ats-title { font-weight: 600; font-size: 10.5pt; }
-        #atsVersion .ats-dates { font-size: 9.5pt; color: #555; white-space: nowrap; padding-left: 8pt; }
-        #atsVersion .ats-sub { font-size: 9.5pt; color: #555; margin: 1pt 0 3pt; }
-        #atsVersion .ats-desc { margin: 2pt 0; }
-        #atsVersion ul { margin: 3pt 0 0; padding-left: 16pt; }
-        #atsVersion li { margin-bottom: 1.5pt; list-style-type: disc; }
-        #atsVersion .ats-inline { line-height: 1.6; }
+        #atsVersion .ats-title { font-weight: 600; font-size: 9.7pt; }
+        #atsVersion .ats-dates { font-size: 8.7pt; color: #555; white-space: nowrap; padding-left: 8pt; }
+        #atsVersion .ats-sub { font-size: 8.7pt; color: #555; margin: 0.5pt 0 1.5pt; }
+        #atsVersion .ats-desc { margin: 1pt 0; }
+        #atsVersion ul { margin: 1.5pt 0 0; padding-left: 14pt; }
+        #atsVersion li { margin-bottom: 0.6pt; list-style-type: disc; }
+        #atsVersion .ats-inline { line-height: 1.4; }
+        /* Core Competencies keyword block: compact, keyword-dense */
+        #atsVersion .ats-keywords { font-size: 8.6pt; line-height: 1.4; color: #222; }
 
         /* When ATS mode is active: hide the designed layout, show ATS */
         body.ats-mode #main,
@@ -660,28 +662,40 @@
             const langs = data.languages.map(l => `${esc(l.language)} (${esc(l.level)})`).join(' · ');
             const linkedin = String(c.linkedin).replace(/\n/g, '');
 
+            // Core competencies: keyword-dense line (boosts ATS keyword match).
+            // Uses atsKeywords from JSON if present, else derives from skills.
+            const competencies = (data.atsKeywords && data.atsKeywords.length)
+                ? data.atsKeywords.map(esc).join(' · ')
+                : data.skills.map(esc).join(' · ');
+
             document.getElementById('atsVersion').innerHTML = `
                 <h1>${esc(p.firstName)} ${esc(p.lastName)}</h1>
                 <div class="ats-role">${esc(p.title)}</div>
-                <div class="ats-contact">${esc(c.email)} | ${esc(c.phone)} | ${esc(c.location)} | ${esc(c.github)} | ${linkedin}</div>
+                <div class="ats-contact">
+                    Email: ${esc(c.email)} | Phone: ${esc(c.phone)} | Location: ${esc(c.location)}<br>
+                    LinkedIn: ${linkedin} | GitHub: ${esc(c.github)}
+                </div>
 
                 <h2>Professional Summary</h2>
                 <div class="ats-summary">${esc(p.abstract)}</div>
 
-                <h2>Experience</h2>
+                <h2>Work Experience</h2>
                 ${expHTML}
 
                 <h2>Education</h2>
                 ${eduHTML}
 
-                <h2>Key Projects</h2>
-                ${projHTML}
-
-                <h2>Skills</h2>
-                <div class="ats-inline">${skills}</div>
-
                 <h2>Certifications</h2>
                 <ul>${certs}</ul>
+
+                <h2>Technical Skills</h2>
+                <div class="ats-keywords">${skills}</div>
+
+                <h2>Core Competencies</h2>
+                <div class="ats-keywords">${competencies}</div>
+
+                <h2>Key Projects</h2>
+                ${projHTML}
 
                 <h2>Languages</h2>
                 <div class="ats-inline">${langs}</div>
@@ -689,17 +703,31 @@
         }
 
         /* ---------- Print mode switches ---------- */
+        // Build a filename like "Grigoris Kazakou Resume 2026-10-18"
+        // (the browser uses document.title as the default Save-as-PDF name).
+        var ORIGINAL_TITLE = document.title;
+        function pad(n) { return String(n).padStart(2, '0'); }
+        function resumeFilename(label) {
+            var d = new Date();
+            var date = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+            // label goes between name and "Resume", e.g. "Grigoris Kazakou Designed Resume 2026-10-18"
+            var name = 'Grigoris Kazakou ' + (label ? label + ' ' : '') + 'Resume';
+            return name + ' ' + date;
+        }
         function printDesigned() {
             document.body.classList.remove('ats-mode');
+            document.title = resumeFilename('Designed');
             window.print();
         }
         function printATS() {
             document.body.classList.add('ats-mode');
+            document.title = resumeFilename('');
             window.print();
         }
-        // After printing, return to designed view on screen
+        // After printing, restore the original title and designed view
         window.addEventListener('afterprint', function () {
             document.body.classList.remove('ats-mode');
+            document.title = ORIGINAL_TITLE;
         });
     </script>
 
