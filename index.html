@@ -169,7 +169,7 @@
         .date span:nth-child(2)::before {
             position: relative;
             top: 1pt;
-            right: 12pt;  /* Increased from 5.5pt to prevent overlap */
+            right: 12pt;
             display: block;
             height: 13pt;
             content: '|';
@@ -290,7 +290,7 @@
         }
 
         .side-block {
-            margin-top: 6mm;  /* Reduced from 12mm to 6mm - 50% less space! */
+            margin-top: 6mm;
         }
 
         .side-block:first-child {
@@ -323,9 +323,9 @@
         }
 
         #skills li, #certifications li, #languages li {
-            margin-bottom: 0.3mm;  /* Reduced spacing */
+            margin-bottom: 0.3mm;
             padding-left: 0;
-            line-height: 1.3;  /* Tighter lines */
+            line-height: 1.3;
         }
 
         /* Add bullets to all sidebar lists */
@@ -334,36 +334,55 @@
             margin-right: 0.3em;
             color: #000;
         }
-        #disclaimer {
-            position: absolute;
-            bottom: var(--sidebar-horizontal-padding);
-            right: var(--sidebar-horizontal-padding);
-            font-size: 10pt;
-            font-style: italic;
-            line-height: 1.1;
-            text-align: right;
-            color: #777;
-        }
 
-        #disclaimer code {
-            color: #666;
-            font-family: "Source Code Pro", monospace;
-            font-weight: 400;
-            font-style: normal;
+        /* ============================================================
+           ATS VERSION (single column) — hidden by default
+           ============================================================ */
+        #atsVersion {
+            display: none;
+            width: var(--page-width);
+            padding: 16mm;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 300;
+            color: #000;
+            font-size: 10.5pt;
+            line-height: 1.4;
         }
+        #atsVersion h1 { font-size: 20pt; font-weight: 600; letter-spacing: 0.5pt; }
+        #atsVersion .ats-role { font-size: 11pt; color: #333; margin: 2pt 0 6pt; font-weight: 400; }
+        #atsVersion .ats-contact { font-size: 9.5pt; color: #333; margin-bottom: 10pt; }
+        #atsVersion h2 {
+            font-size: 11.5pt; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.5pt; border-bottom: 1.5px solid #333;
+            padding-bottom: 3pt; margin: 13pt 0 7pt;
+        }
+        #atsVersion .ats-summary { text-align: justify; margin-bottom: 4pt; }
+        #atsVersion .ats-entry { margin-bottom: 8pt; page-break-inside: avoid; }
+        #atsVersion .ats-row { display: flex; justify-content: space-between; align-items: baseline; }
+        #atsVersion .ats-title { font-weight: 600; font-size: 10.5pt; }
+        #atsVersion .ats-dates { font-size: 9.5pt; color: #555; white-space: nowrap; padding-left: 8pt; }
+        #atsVersion .ats-sub { font-size: 9.5pt; color: #555; margin: 1pt 0 3pt; }
+        #atsVersion .ats-desc { margin: 2pt 0; }
+        #atsVersion ul { margin: 3pt 0 0; padding-left: 16pt; }
+        #atsVersion li { margin-bottom: 1.5pt; list-style-type: disc; }
+        #atsVersion .ats-inline { line-height: 1.6; }
+
+        /* When ATS mode is active: hide the designed layout, show ATS */
+        body.ats-mode #main,
+        body.ats-mode #sidebar { display: none !important; }
+        body.ats-mode #atsVersion { display: block; }
+        body.ats-mode { width: auto; height: auto; }
 
         @media print {
             body {
                 -webkit-print-color-adjust: exact;
                 print-color-adjust: exact;
             }
-            
-            /* Prevent blocks from breaking across pages */
+
             .blocks {
                 page-break-inside: avoid;
             }
 
-            /* Keep titles with their content */
             .details header {
                 page-break-after: avoid;
             }
@@ -375,28 +394,24 @@
                 widows: 3;
             }
 
-            /* Force IT Coordinator to start on page 2 */
-            #experienceContainer .blocks:last-child {
-                page-break-before: always;
-                padding-top: 0mm;
+            /* Keep sidebar blocks intact (don't split across pages) */
+            #certifications, #skills, #languages, #contact, #profile-photo {
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
 
-            /* Languages section on page 2 */
-            #languages {
-                page-break-before: always;
-                padding-top: 0mm;
-            }
-
-            /* Ensure sidebar background continues */
             #sidebar {
                 min-height: 100vh;
             }
 
-            /* Better text flow */
             p, li, div {
                 orphans: 3;
                 widows: 3;
             }
+
+            /* ATS entries never split */
+            #atsVersion .ats-entry { page-break-inside: avoid; }
+            #atsVersion h2 { page-break-after: avoid; }
         }
 
         @media screen {
@@ -404,26 +419,27 @@
                 margin: 20px auto;
                 box-shadow: 0 0 20px rgba(0,0,0,0.1);
             }
-            
+
             .web-buttons {
                 position: fixed;
                 top: 20px;
                 right: 20px;
                 z-index: 1000;
             }
-            
+
             .web-buttons button {
                 background: #2563eb;
                 color: white;
                 border: none;
-                padding: 10px 20px;
+                padding: 10px 18px;
                 border-radius: 6px;
                 font-size: 14px;
                 cursor: pointer;
                 box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
                 transition: all 0.3s ease;
+                margin-left: 8px;
             }
-            
+
             .web-buttons button:hover {
                 background: #1d4ed8;
                 transform: translateY(-2px);
@@ -435,17 +451,17 @@
             .web-buttons {
                 display: none !important;
             }
-        }
-        @media print {
             #privacy-banner { display: none !important; }
         }
     </style>
 </head>
 <body lang="en">
     <div class="web-buttons">
-        <button onclick="window.print()">🖨️ Print / Save PDF</button>
+        <button onclick="printDesigned()">🖨️ Print (Designed)</button>
+        <button onclick="printATS()">📄 Print (ATS)</button>
     </div>
 
+    <!-- ===================== DESIGNED (2-column) ===================== -->
     <section id="main">
         <header id="title">
             <h1><span id="firstName">Loading</span> <strong id="lastName">...</strong></h1>
@@ -459,23 +475,17 @@
         </section>
 
         <section class="main-block">
-            <h2>
-                <i class="fa fa-suitcase"></i> Experience
-            </h2>
+            <h2><i class="fa fa-suitcase"></i> Experience</h2>
             <div id="experienceContainer"></div>
         </section>
 
         <section class="main-block">
-            <h2>
-                <i class="fa fa-graduation-cap"></i> Education
-            </h2>
+            <h2><i class="fa fa-graduation-cap"></i> Education</h2>
             <div id="educationContainer"></div>
         </section>
 
         <section class="main-block concise">
-            <h2>
-                <i class="fa fa-folder-open"></i> Key Projects
-            </h2>
+            <h2><i class="fa fa-folder-open"></i> Key Projects</h2>
             <div id="projectsContainer"></div>
         </section>
     </section>
@@ -488,17 +498,14 @@
             <h1>Contact</h1>
             <ul id="contactList"></ul>
         </div>
-
-        <div class="side-block" id="skills">
-            <h1>Skills</h1>
-            <ul id="skillsList"></ul>
-        </div>
-
         <div class="side-block" id="certifications">
             <h1>Certifications</h1>
             <ul id="certificationsList"></ul>
         </div>
-
+        <div class="side-block" id="skills">
+            <h1>Skills</h1>
+            <ul id="skillsList"></ul>
+        </div>
         <div class="side-block" id="languages">
             <h1>Languages</h1>
             <ul id="languagesList"></ul>
@@ -506,18 +513,20 @@
         <a href="privacy.html" style="font-size:8pt; color:#999;">Privacy</a>
     </aside>
 
+    <!-- ===================== ATS VERSION (single column) ===================== -->
+    <div id="atsVersion"></div>
+
     <script>
         // Load CV data from JSON file
         fetch('data.json')
             .then(response => response.json())
             .then(data => {
-                // Personal Info
+                /* ---------- DESIGNED (2-column) ---------- */
                 document.getElementById('firstName').textContent = data.personal.firstName;
                 document.getElementById('lastName').textContent = data.personal.lastName;
                 document.getElementById('jobTitle').textContent = data.personal.title;
                 document.getElementById('abstract').textContent = data.personal.abstract;
 
-                // Contact
                 const contactList = document.getElementById('contactList');
                 contactList.innerHTML = `
                     <li><i class="fa fa-envelope"></i> ${data.contact.email}</li>
@@ -527,21 +536,17 @@
                     <li><i class="fab fa-linkedin"></i> ${data.contact.linkedin}</li>
                 `;
 
-                // Experience
                 const experienceContainer = document.getElementById('experienceContainer');
                 data.experience.forEach(exp => {
                     const expBlock = document.createElement('section');
                     expBlock.className = 'blocks';
-                    
-                    // Add page break if specified
                     if (exp.pageBreakBefore) {
                         expBlock.style.pageBreakBefore = 'always';
-                        expBlock.style.paddingTop = '10mm';  // Add space at top of new page
+                        expBlock.style.paddingTop = '10mm';
                     }
-                    
                     expBlock.innerHTML = `
                         <div class="date">
-                            <span>${exp.startDate}</span><span>${exp.endDate}</span>
+                            <span>${exp.endDate}</span><span>${exp.startDate}</span>
                         </div>
                         <div class="decorator"></div>
                         <div class="details">
@@ -550,35 +555,24 @@
                                 <span class="place">${exp.company}</span>
                                 <span class="location">${exp.location}</span>
                             </header>
-                            <div>
-                                <ul>
-                                    ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
-                                </ul>
-                            </div>
-                        </div>
-                    `;
+                            <div><ul>${exp.responsibilities.map(r => `<li>${r}</li>`).join('')}</ul></div>
+                        </div>`;
                     experienceContainer.appendChild(expBlock);
                 });
 
-                // Education
                 const educationContainer = document.getElementById('educationContainer');
                 data.education.forEach(edu => {
                     const eduBlock = document.createElement('section');
                     eduBlock.className = 'blocks';
-                    
-                    // Add page break if specified
                     if (edu.pageBreakBefore) {
                         eduBlock.style.pageBreakBefore = 'always';
                         eduBlock.style.paddingTop = '10mm';
                     }
-                    
-                    const dateHTML = edu.year 
-                        ? `<span>${edu.year}</span>` 
-                        : `<span>${edu.startYear}</span><span>${edu.endYear}</span>`;
+                    const dateHTML = edu.year
+                        ? `<span>${edu.year}</span>`
+                        : `<span>${edu.endYear}</span><span>${edu.startYear}</span>`;
                     eduBlock.innerHTML = `
-                        <div class="date">
-                            ${dateHTML}
-                        </div>
+                        <div class="date">${dateHTML}</div>
                         <div class="decorator"></div>
                         <div class="details">
                             <header>
@@ -587,23 +581,18 @@
                                 <span class="location">${edu.location}</span>
                             </header>
                             ${edu.description ? `<div>${edu.description}</div>` : ''}
-                        </div>
-                    `;
+                        </div>`;
                     educationContainer.appendChild(eduBlock);
                 });
 
-                // Projects
                 const projectsContainer = document.getElementById('projectsContainer');
                 data.projects.forEach(proj => {
                     const projBlock = document.createElement('section');
                     projBlock.className = 'blocks';
-                    
-                    // Add page break class if specified in JSON
                     if (proj.pageBreakBefore) {
                         projBlock.style.pageBreakBefore = 'always';
                         projBlock.style.paddingTop = '10mm';
                     }
-                    
                     projBlock.innerHTML = `
                         <div class="date"></div>
                         <div class="decorator"></div>
@@ -613,29 +602,108 @@
                                 <span class="place">${proj.company}</span>
                             </header>
                             <div>${proj.description}</div>
-                        </div>
-                    `;
+                        </div>`;
                     projectsContainer.appendChild(projBlock);
                 });
 
-                // Skills
-                const skillsList = document.getElementById('skillsList');
-                skillsList.innerHTML = data.skills.map(skill => `<li>${skill}</li>`).join('');
+                document.getElementById('skillsList').innerHTML =
+                    data.skills.map(s => `<li>${s}</li>`).join('');
+                document.getElementById('certificationsList').innerHTML =
+                    data.certifications.map(c => `<li>${c}</li>`).join('');
+                document.getElementById('languagesList').innerHTML =
+                    data.languages.map(l => `<li>${l.language} (${l.level})</li>`).join('');
 
-                // Certifications
-                const certificationsList = document.getElementById('certificationsList');
-                certificationsList.innerHTML = data.certifications.map(cert => `<li>${cert}</li>`).join('');
-
-                // Languages
-                const languagesList = document.getElementById('languagesList');
-                languagesList.innerHTML = data.languages.map(lang => `<li>${lang.language} (${lang.level})</li>`).join('');
+                /* ---------- ATS (single column) ---------- */
+                buildATS(data);
             })
             .catch(error => {
                 console.error('Error loading CV data:', error);
                 document.getElementById('abstract').textContent = 'Error loading CV data. Please check console.';
             });
+
+        function buildATS(data) {
+            const p = data.personal, c = data.contact;
+            const esc = s => String(s);
+
+            const expHTML = data.experience.map(e => `
+                <div class="ats-entry">
+                    <div class="ats-row">
+                        <span class="ats-title">${esc(e.title)}${e.workType ? ' (' + esc(e.workType) + ')' : ''}</span>
+                        <span class="ats-dates">${esc(e.startDate)} – ${esc(e.endDate)}</span>
+                    </div>
+                    <div class="ats-sub">${esc(e.company)} · ${esc(e.location)}</div>
+                    <ul>${e.responsibilities.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
+                </div>`).join('');
+
+            const eduHTML = data.education.map(e => {
+                const dates = e.year ? esc(e.year) : `${esc(e.startYear)} – ${esc(e.endYear)}`;
+                return `
+                <div class="ats-entry">
+                    <div class="ats-row">
+                        <span class="ats-title">${esc(e.degree)}</span>
+                        <span class="ats-dates">${dates}</span>
+                    </div>
+                    <div class="ats-sub">${esc(e.institution)} · ${esc(e.location)}</div>
+                    ${e.description ? `<div class="ats-desc">${esc(e.description)}</div>` : ''}
+                </div>`;
+            }).join('');
+
+            const projHTML = data.projects.map(pr => `
+                <div class="ats-entry">
+                    <div class="ats-row"><span class="ats-title">${esc(pr.name)}</span></div>
+                    <div class="ats-sub">${esc(pr.company)}</div>
+                    <div class="ats-desc">${esc(pr.description)}</div>
+                </div>`).join('');
+
+            const skills = data.skills.map(esc).join(' · ');
+            const certs = data.certifications.map(c => `<li>${esc(c)}</li>`).join('');
+            const langs = data.languages.map(l => `${esc(l.language)} (${esc(l.level)})`).join(' · ');
+            const linkedin = String(c.linkedin).replace(/\n/g, '');
+
+            document.getElementById('atsVersion').innerHTML = `
+                <h1>${esc(p.firstName)} ${esc(p.lastName)}</h1>
+                <div class="ats-role">${esc(p.title)}</div>
+                <div class="ats-contact">${esc(c.email)} | ${esc(c.phone)} | ${esc(c.location)} | ${esc(c.github)} | ${linkedin}</div>
+
+                <h2>Professional Summary</h2>
+                <div class="ats-summary">${esc(p.abstract)}</div>
+
+                <h2>Experience</h2>
+                ${expHTML}
+
+                <h2>Education</h2>
+                ${eduHTML}
+
+                <h2>Key Projects</h2>
+                ${projHTML}
+
+                <h2>Skills</h2>
+                <div class="ats-inline">${skills}</div>
+
+                <h2>Certifications</h2>
+                <ul>${certs}</ul>
+
+                <h2>Languages</h2>
+                <div class="ats-inline">${langs}</div>
+            `;
+        }
+
+        /* ---------- Print mode switches ---------- */
+        function printDesigned() {
+            document.body.classList.remove('ats-mode');
+            window.print();
+        }
+        function printATS() {
+            document.body.classList.add('ats-mode');
+            window.print();
+        }
+        // After printing, return to designed view on screen
+        window.addEventListener('afterprint', function () {
+            document.body.classList.remove('ats-mode');
+        });
     </script>
-      <!-- GoatCounter analytics -->
+
+    <!-- GoatCounter analytics -->
     <script data-goatcounter="https://gregkazakou.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
     <script>
@@ -645,28 +713,29 @@
         }
       });
     </script>
-      <!-- Privacy consent banner -->
-  <div id="privacy-banner" style="display:none; position:fixed; bottom:16px; left:16px; right:16px; max-width:460px; margin:0 auto; background:#1a1a1a; color:#fff; padding:16px 18px; border-radius:10px; font-family:'Open Sans',sans-serif; font-size:13px; line-height:1.5; box-shadow:0 4px 20px rgba(0,0,0,0.25); z-index:9999;">
-    This site uses privacy-friendly analytics (no cookies, no personal data).
-    <a href="privacy.html" style="color:#6ea8ff;">Learn more</a>.
-    <div style="margin-top:10px; text-align:right;">
-      <button onclick="dismissPrivacy()" style="background:#2563eb; color:#fff; border:none; padding:7px 16px; border-radius:6px; font-size:13px; cursor:pointer;">Got it</button>
+
+    <!-- Privacy consent banner -->
+    <div id="privacy-banner" style="display:none; position:fixed; bottom:16px; left:16px; right:16px; max-width:460px; margin:0 auto; background:#1a1a1a; color:#fff; padding:16px 18px; border-radius:10px; font-family:'Open Sans',sans-serif; font-size:13px; line-height:1.5; box-shadow:0 4px 20px rgba(0,0,0,0.25); z-index:9999;">
+        This site uses privacy-friendly analytics (no cookies, no personal data).
+        <a href="privacy.html" style="color:#6ea8ff;">Learn more</a>.
+        <div style="margin-top:10px; text-align:right;">
+            <button onclick="dismissPrivacy()" style="background:#2563eb; color:#fff; border:none; padding:7px 16px; border-radius:6px; font-size:13px; cursor:pointer;">Got it</button>
+        </div>
     </div>
-  </div>
-  <script>
-    (function () {
-      try {
-        if (!localStorage.getItem('privacyAck')) {
-          document.getElementById('privacy-banner').style.display = 'block';
+    <script>
+        (function () {
+            try {
+                if (!localStorage.getItem('privacyAck')) {
+                    document.getElementById('privacy-banner').style.display = 'block';
+                }
+            } catch (e) {
+                document.getElementById('privacy-banner').style.display = 'block';
+            }
+        })();
+        function dismissPrivacy() {
+            try { localStorage.setItem('privacyAck', '1'); } catch (e) {}
+            document.getElementById('privacy-banner').style.display = 'none';
         }
-      } catch (e) {
-        document.getElementById('privacy-banner').style.display = 'block';
-      }
-    })();
-    function dismissPrivacy() {
-      try { localStorage.setItem('privacyAck', '1'); } catch (e) {}
-      document.getElementById('privacy-banner').style.display = 'none';
-    }
-  </script>
+    </script>
 </body>
 </html>
