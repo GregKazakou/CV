@@ -8,9 +8,9 @@
   "personal": {
     "firstName": "Grigoris",
     "lastName": "Kazakou",
-    "title": "Product - Project Manager & Business Analyst, PMP",
+    "title": "IT Product & Project Manager, PMP",
     "photo": "GregKazakou/CV/img/Photo_Profile.jpg",
-    "abstract": "Enthusiastic and results-driven IT Product & Project Manager, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end—from product vision to delivery—aligning strategy, governance, and stakeholder needs with Agile, Hybrid, and Waterfall methodologies. Experienced in driving digital transformation across SaaS products in highly regulated environments, turning technical challenges into actionable business solutions while optimizing processes, mitigating risks, and fostering innovation across SMEs and enterprise organizations."
+    "abstract": "IT Product & Project Manager with 8+ years in IT and project delivery, bridging technology and business to deliver measurable impact. I lead complex software initiatives end-to-end — from product vision to release — across Agile, Hybrid, and Waterfall methodologies, having managed 18–22 concurrent projects and 3 SaaS products in highly regulated environments. Skilled at turning technical challenges into actionable business solutions, optimizing processes, mitigating risk, and driving digital transformation across SMEs and enterprise organizations."
   },
   "contact": {
     "email": "gregkazakou@gmail.com",
@@ -26,14 +26,14 @@
       "location": "Athens, GR",
       "workType": "Hybrid",
       "startDate": "2026",
-      "endDate": "present",
+      "endDate": "Present",
       "responsibilities": [
-        "Lead end-to-end product management for 3 SaaS products in highly regulated environments, from feature definition to release and roadmap prioritization",
-        "Author product features, acceptance criteria, test plans, and release changelogs, keeping engineering, QA, and business stakeholders aligned on each delivery",
-        "Collaborate with engineering to define technical and business requirements and validate API specifications (Swagger, Postman, Apidog)",
-        "Establish QA and governance practices with automated testing (Robot Framework) and API validation to make quality a repeatable, scalable process",
-        "Coordinate agile workflows and release cycles across multiple teams using Azure DevOps and Wrike, aligning technical and business priorities",
-        "Experiment with AI/LLM-assisted automation to streamline validation and documentation workflows"
+        "Lead end-to-end product management for 3 SaaS products in highly regulated environments, owning feature definition, release, and roadmap prioritization",
+        "Author product features, acceptance criteria, test plans, and release changelogs, keeping engineering, QA, and business stakeholders aligned on every delivery",
+        "Define technical and business requirements with engineering and validate API specifications using Swagger, Postman, and Apidog",
+        "Established automated QA and governance practices (Robot Framework, API validation, UI testing), making quality a repeatable, scalable process across releases",
+        "Coordinate agile workflows and release cycles across multiple teams using Azure DevOps and Wrike",
+        "Pilot AI/LLM-assisted automation to streamline validation and documentation workflows"
       ]
     },
     {
@@ -44,10 +44,10 @@
       "startDate": "2023",
       "endDate": "2025",
       "responsibilities": [
-        "Managed portfolio of 18–22 concurrent projects, leading end-to-end delivery with large enterprise clients",
-        "Operated in complex, regulated environments ensuring alignment across business, compliance, and technical requirements",
-        "Applied Waterfall, Hybrid, and Agile methodologies for effective project delivery and change management",
-        "Identified business needs, analyzed stakeholder expectations, and monitored regulatory updates to inform project objectives"
+        "Delivered a portfolio of 18–22 concurrent projects end-to-end for large enterprise clients, consistently meeting scope, timeline, and compliance targets",
+        "Managed delivery in complex, regulated environments, ensuring alignment across business, compliance, and technical teams",
+        "Applied Waterfall, Hybrid, and Agile methodologies to drive effective delivery and change management",
+        "Translated business needs and stakeholder expectations into clear project objectives, monitoring regulatory updates throughout"
       ]
     },
     {
@@ -59,9 +59,9 @@
       "endDate": "2023",
       "pageBreakBefore": false,
       "responsibilities": [
-        "Led initiatives to modernize client business processes through digital invoicing, ERP, EDI, WMS, CRM, and eCommerce solutions",
-        "Analyzed business requirements and designed solutions aligned with customer workflows, implementing PEPPOL and MyData standards",
-        "Collaborated with development teams to translate business needs into technical tasks and ensure seamless API integration"
+        "Led digital-transformation initiatives modernizing client processes across e-invoicing, ERP, EDI, WMS, CRM, and eCommerce",
+        "Analyzed business requirements and designed solutions aligned to customer workflows, implementing PEPPOL and MyData compliance standards",
+        "Partnered with development teams to translate business needs into technical tasks and deliver seamless API integrations"
       ]
     },
     {
@@ -73,8 +73,7 @@
       "endDate": "2022",
       "pageBreakBefore": false,
       "responsibilities": [
-        "Provided technical support, troubleshooting hardware and network issues",
-        "Assisted in administration of resources and managed communication systems"
+        "Provided technical support and troubleshooting for hardware, network, and communication systems in a 24/7 hospital environment"
       ]
     },
     {
@@ -86,9 +85,9 @@
       "endDate": "2021",
       "pageBreakBefore": false,
       "responsibilities": [
-        "Drove digital transformation by identifying technical challenges and implementing solutions to enhance business performance",
-        "Collaborated with stakeholders to implement ERP, CRM, and eCommerce platforms, optimizing system performance",
-        "Managed IT infrastructure including hardware, software, networks, servers, and operating systems"
+        "Drove digital transformation by identifying technical gaps and implementing solutions that improved business performance",
+        "Implemented ERP, CRM, and eCommerce platforms with stakeholders, optimizing system performance and adoption",
+        "Managed full IT infrastructure — hardware, software, networks, servers, and operating systems"
       ]
     }
   ],
@@ -98,7 +97,7 @@
       "institution": "Hellenic Open University",
       "location": "Athens, GR",
       "startYear": "2026",
-      "endYear": "present",
+      "endYear": "Present",
       "description": "Comprehensive computer science program covering programming, software engineering, data structures, digital systems, computer networks, artificial intelligence, distributed systems, and mathematics for informatics — combining strong theoretical foundations with hands-on laboratory and project work."
     },
     {
@@ -120,7 +119,7 @@
       "degree": "Technical High School Diploma in Computer and Network Technology",
       "institution": "Sivitanidios Technical High School",
       "location": "Athens, GR",
-      "startYear": "2012",
+      "startYear": "2011",
       "endYear": "2014",
       "description": "Specialization in computer hardware, network technician, network installation, maintenance, and systems troubleshooting."
     }
